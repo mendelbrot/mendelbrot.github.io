@@ -1,1 +1,0 @@
-# mendelbrot.github.io
