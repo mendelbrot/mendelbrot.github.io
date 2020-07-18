@@ -8,14 +8,14 @@ layout: default
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        Originally published on: {{ page.date | date: date_format }}
+        {%- if page.last_modified_at -%}
+          Published: {{ page.date | date: date_format }}
+          <br />
+          Edited: {{ page.last_modified_at | date: date_format }}
+        {%- else -%}
+          Published: {{ page.date | date: date_format }}
+        {%- endif -%}
       </time>
-      {%- if page.last_modified_at -%}
-        <br />
-        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          Last updated: {{ page.last_modified_at | date: date_format }}
-        </time>
-      {%- endif -%}
       {%- if page.author -%}
       • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">{{ page.author }}</span></span>
