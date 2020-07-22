@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Civ Board Game"
-date:   2020-07-21 00:01:00 -0700
-categories: games
+title:  "Empires of Catanan"
+date:   2020-07-24 00:01:00 -0700
+categories: Games
 ---
 
 This is a board game I made up.  It uses the tiles, cards, and pieces from the popular game Settlers of Catan.  As well, it uses some pieces from Terraforming Mars, the Meeples of Carcassonne, and a jar of dimes (all of which can be substituted for other available alternatives). 
