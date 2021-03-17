@@ -155,8 +155,19 @@ I followed the instructions and ran `bundle update`.  This took a few minutes.  
 
 ```bash
 cd /mnt/c/home/repos/mendelbrot.github.io
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 ```
 
 go to [localhost:4000](http://localhost:4000/)
+
+I have a problem: live reload doesn't work with either `--livereload` or `--watch`.  It doesn't seem to detect changes to the file system, so my first idea is to move the repo from the windows mounted filesystem to a folder in the full Linux system.  This is also my only idea so far...  
+
+```
+cd /home/greg
+git clone https://github.com/mendelbrot/mendelbrot.github.io.git
+code .
+bundle exec jekyll serve --livereload
+```
+
+live reload works and it is wickedly fast.  Startup took a second instead of 2 minutes!
 
