@@ -13,7 +13,7 @@ title: Categories
     <a name="{{ category_name | slugize }}"></a>
     {% for post in site.categories[category_name] %}
     <article class="archive-item">
-      <h4 class="indent">
+      <h4 class="indent margin-0">
         <a  href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>
       </h4>
     </article>
