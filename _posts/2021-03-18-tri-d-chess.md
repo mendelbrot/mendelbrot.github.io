@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tri-D chess
+title: Tri-D Chess
 date: 2021-03-18 10:00 -0700
 # edited: 2021-03-18 10:00 -0700
 # categories: tri-d-chess
