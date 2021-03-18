@@ -8,15 +8,15 @@ layout: default
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {%- if page.last_modified_at -%}
+        {%- if page.edited -%}
           Published: {{ page.date | date: date_format }}
           <br />
-          Edited: {{ page.last_modified_at | date: date_format }}
+          Edited: {{ page.edited | date: date_format }}
         {%- else -%}
           Published: {{ page.date | date: date_format }}
         {%- endif -%}
       </time>
-      <div class="post-categories">
+      <!-- <div class="post-categories">
         {% if post %}
         {% assign categories = post.categories %}
         {% else %}
@@ -26,8 +26,8 @@ layout: default
         {% for category in categories %}
         <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
         {% endfor %}
-      </div>
-      <div class="post-tags">
+      </div> -->
+      <!-- <div class="post-tags">
         {% if post %}
         {% assign tags = post.tags %}
         {% else %}
@@ -37,7 +37,7 @@ layout: default
         {% for tag in tags %}
         <a href="{{site.baseurl}}/tags/#{{tag|slugize}}">{{tag}}</a>
         {% endfor %}
-      </div>
+      </div> -->
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

@@ -30,8 +30,9 @@ plugins:
   - jekyll-feed
 
 header_pages:
-  - categories.html
-  - about.md
+  -
+  # - about.md
+  # - categories.html
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
