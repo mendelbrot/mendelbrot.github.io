@@ -182,3 +182,15 @@ bundle exec jekyll serve --livereload
 ```bash
 cp -r /mnt/c/home/repos/notes-personal/assets/ /home/greg/mendelbrot.github.io/assets/
 ```
+
+### git create branch
+
+```bash
+git checkout -b iss53
+```
+
+### copying diagram to linux filesystem
+
+```bash
+cp  /mnt/c/home/files/projects/star_trek_chess/svgs/diagrams/setup-diagram.png /home/greg/mendelbrot.github.io/assets/images/star-trek-chess/setup-diagram.png
+```
