@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exploring Tri-D Chess Rules
-date: 2021-03-24 10:00 -0700
+date: 2021-03-27 10:00 -0700
 # edited: 2021-03-18 10:00 -0700
 # categories: tri-d-chess
 # tags: star-trek 3D-chess Tri-D-chess multi-level-chess
@@ -11,13 +11,13 @@ This post is about different alternative rules that might improve tri-d chess an
 
 ## Existing rules summary
 
-These are the [Jens Meder rules](http://meder.spacechess.org/3dschach/chess3d.htm). See 3.1 for movement rules. Other versions are similar.
+The [Jens Meder rules](http://meder.spacechess.org/3dschach/chess3d.htm) are a fairly accessible reference. See 3.1 for movement rules. Other versions are similar.
 
-Here is my quick summary of standard tri-d chess movement rules:  
+Here's my quick summary of standard tri-d chess movement rules:  
 
 Pieces move as in normal chess when viewed from above.  A piece can end its move on any of the squares in the column it moves to.  A path-mover is blocked by any piece in a column it moves through, although it can end it's move in the column of the blocking piece. 
 
-Note: I Used the word *column* here: I define a column as a set of squares that overlap when viewing the board from directly above.
+I Used the word *column* here: I define a column as a set of squares that overlap when viewing the board from directly above.
 
 ## Stationary half-levels: Random board arrangement
 
@@ -25,11 +25,11 @@ Recall for standard tri-d chess that the attack boards (which I call *half-level
 
 I prefer not to play with inverting half-levels.  I also do not move them during the game.  Instead, I will randomize their locations at the start of the game.  The player who moves second chooses the side of the board they will play from - that is, the side that they think will give them the advantage based on the arrangement of the half-levels.  The idea is that this advantage will compensate for the disadvantage of moving second.
 
-I don't put the half-levels in any random positions, I have a fairly detailed way of selecting a nice balanced random placement.
+I don't put the half-levels in any random positions, I have a process for selecting a nice balanced random placement.
 
 There are twelve half-level locations, three in each quadrant of the board.  Each of these sets of three locations I call a *triad*.  Each player has two triads on their side of the board.  
 
-This is how the half-levels are placed:  One one side of the board, randomly place a half-level on any of the three spots on one of the triads.  Then place a half-level on a spot on triad beside it: this time, randomly choose between the two spots that do not correspond to the one that was chosen on the first triad.  Repeat this process on the other side of the board.  The total number of random starting positions is `3*2*3*2 = 36`.  In contrast, the total number of ways to place the levels with no restrictions is `C(12,4) = 495`.
+This is how the half-levels are placed:  One one side of the board, randomly place a half-level on any of the three spots on one of the triads.  Then place a half-level on a spot on the triad beside it: this time, randomly choose between the two spots that do not correspond to the one that was chosen on the first triad.  Repeat this process on the other side of the board.  The total number of random starting positions is `3*2*3*2 = 36`.  In contrast, the total number of ways to place the levels with no restrictions is `C(12,4) = 495`.
 
 ## Starting piece arrangement
 
@@ -111,20 +111,25 @@ A piece that moves like a king and like a knight is called a [centaur](https://e
 
 | ![centaur](/assets/images/star-trek-chess/centaur-2.svg) | ![multi-level-centaur](/assets/images/star-trek-chess/centaur-1.svg) |
 
-## Multi-level Approximations of 3D Movement
+## Multi-level approximations of 3d movement
 
 While writing this post I realized that rules described in terms of levels, like the multi-level centaur, can be used to create simplified approximations of 3d and hook movement.  The benefit is that multi-level descriptions are easier for people to understand and apply.  At the same time these descriptions can be tailored to retain the essence of the 3d geometry.
 
-The multi-level bishop, based on the 3d hook-move bishop:  
+The multi-level bishop, based on the 3d hook-move bishop: 
+
 1. Moves like a bishop on its own level.
 2. When traveling a vertical distance of 1 between a main level and a half-level: can make a knight hop, or make a single square move in a horizontal direction.
 3. When traveling a vertical distance of 2 between two main levels levels: can jump to its corresponding square on the other level (2 up and 2 to the side in the direction of the other level) and (optionally) continue the move by making a regular bishop move from that location.
-4. A bishop is not able to perform a move like (3) if the corresponding square on the other level is occupied.  If the corresponding square is occupied by an opposing piece, then the bishop can move to take that piece.
+4. Can not to perform a move like (3) if the corresponding square on the other level is occupied.  If the corresponding square is occupied by an opposing piece, then the bishop can move to take that piece.
 
-The multi-level queen, based on a 3d non-hook-move queen that can move tri-diagonally.  (Tri-diagonal is an archaic term that means diagonal in two dimensions simultaneously in 3d space. Two cubes are diagonal if they touch at one edge, they are tri-diagonal if they touch at one corner.)
+The multi-level queen is based on a 3d non-hook-move queen that can move tri-diagonally.  (Tri-diagonal is an archaic term that means diagonal in two dimensions simultaneously in 3d space. Two cubes are diagonal if they touch at one edge, they are tri-diagonal if they touch at one corner.)  
+
+This queen:
+
 1. Moves like a queen on its own level.
-2. When traveling a vertical distance of 1 between a main level and a half-level: can move like a king, or move vertically.
-3. When traveling a vertical distance of 2 between two main levels levels: can jump two squares horizontally or diagonally in any direction, or move vertically.
+2. When traveling a vertical distance of 1 between a main level and a half-level: can move like a king.
+3. When traveling a vertical distance of 2 between two main levels levels: can jump two squares horizontally or diagonally in any direction.
+4. Can move vertically any number of squares provided that there is no blocking piece along the path, and the move doesn't violate the distance rules. (Travel between different half-levels or between the top and bottoms zones is not allowed)
 
 ## Shogi-style capture and drops
 
