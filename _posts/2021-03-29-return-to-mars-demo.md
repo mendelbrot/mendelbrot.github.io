@@ -11,7 +11,7 @@ date: 2021-03-29 10:00 -0700
 
 Here I'm featuring this React web application that I built in 2019, just after I completed the Software Systems Developer certificate program at BCIT.  
 
-This was soon after Rect version 16.8 came out, and this app makes extensive use of function components, and the (then new) useContext and useState hooks.  
+This was soon after React version 16.8 came out, and this app makes extensive use of function components, and the (then new) useContext and useState hooks.  
 
 This app is intended to be a game.  A spacecraft is orbiting the sun along with the planet Mars.  The user can turn the spacecraft and fire its rocket to go in different directions.  
 

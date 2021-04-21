@@ -119,7 +119,7 @@ The multi-level bishop, based on the 3d hook-move bishop:
 
 1. Moves like a bishop on its own level.
 2. When traveling a vertical distance of 1 between a main level and a half-level: can make a knight hop, or make a single square move in a horizontal direction.
-3. When traveling a vertical distance of 2 between two main levels levels: can jump to its corresponding square on the other level (2 up and 2 to the side in the direction of the other level) and (optionally) continue the move by making a regular bishop move from that location.
+3. When traveling a vertical distance of 2 between two main levels: can jump to its corresponding square on the other level (2 up and 2 to the side in the direction of the other level) and (optionally) continue the move by making a regular bishop move from that location.
 4. Can not to perform a move like (3) if the corresponding square on the other level is occupied.  If the corresponding square is occupied by an opposing piece, then the bishop can move to take that piece.
 
 The multi-level queen is based on a 3d non-hook-move queen that can move tri-diagonally.  (Tri-diagonal is an archaic term that means diagonal in two dimensions simultaneously in 3d space. Two cubes are diagonal if they touch at one edge, they are tri-diagonal if they touch at one corner.)  
@@ -128,7 +128,7 @@ This queen:
 
 1. Moves like a queen on its own level.
 2. When traveling a vertical distance of 1 between a main level and a half-level: can move like a king.
-3. When traveling a vertical distance of 2 between two main levels levels: can jump two squares horizontally or diagonally in any direction.
+3. When traveling a vertical distance of 2 between two main levels: can jump two squares horizontally or diagonally in any direction.
 4. Can move vertically any number of squares provided that there is no blocking piece along the path, and the move doesn't violate the distance rules. (Travel between different half-levels or between the top and bottoms zones is not allowed)
 
 ## Shogi-style capture and drops
