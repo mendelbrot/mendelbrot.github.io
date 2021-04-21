@@ -18,7 +18,7 @@ This is a Serverless Flask application with basic features that many apps would 
 
 If you want to program in Python, and use Serverless, then Flask is a good choice because it's lightweight.  It transitions well from the original purpose as a server which is constantly running and handles everything, to becoming a micro-service with a small area of concern that's quickly spun up when needed and then shut down.  
 
-Here's the project's github repo: [github.com/mendelbrot/serverless-flask](https://github.com/mendelbrot/serverless-flask)
+Here's the project's GitHub repo: [github.com/mendelbrot/serverless-flask](https://github.com/mendelbrot/serverless-flask)
 
 [Here's another Serverless Flask tutorial for reference.](https://www.serverless.com/blog/flask-python-rest-api-serverless-lambda-dynamodb)
 
