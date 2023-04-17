@@ -1,0 +1,9 @@
+<nav role="navigation">
+  <ul>
+    {% for item in site.nav %}
+    <li>
+      <a href="{{ item.path }}">{{ item.label }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

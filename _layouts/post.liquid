@@ -1,0 +1,17 @@
+---
+  layout: default
+---
+
+<h1>{{ title }}</h1>
+<div>
+  <span>Posted: {{ date_posted }}</span>
+</div>
+{% if date_edited %}
+<div>
+  <span>edited: {{ date_edited }}</span>
+</div>
+{% endif %}
+
+<article>
+  {{content}}
+</article>
