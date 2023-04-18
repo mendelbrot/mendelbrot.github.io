@@ -1,9 +1,9 @@
 <nav role="navigation">
-  <ul>
+  <ul class="flex">
     {% for item in site.nav %}
-    <li>
-      <a href="{{ item.path }}">{{ item.label }}</a>
-    </li>
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50">
+        <a href="{{ item.path }}">{{ item.label }}</a>
+      </li>
     {% endfor %}
   </ul>
 </nav>

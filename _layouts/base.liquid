@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.liquid" %}
+
+<body class="overflow-y-scroll bg-orange-50 text-blue-900 flex flex-col min-h-screen">
+  {% include "header.liquid" %}
+
+  <main role="main" class="p-2 flex-1 flex justify-center">
+    <div class="w-page">{{ content }}</div>
+  </main>
+
+  {% include "footer.liquid" %}
+</body>
+
+</html>
