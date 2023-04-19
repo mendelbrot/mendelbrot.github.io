@@ -1,7 +1,12 @@
 <nav role="navigation">
   <ul class="flex">
     {% for item in site.nav %}
-      <li class="flex-initial text-2xl ml-4 hover:opacity-50">
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      {% assign page_path = page.url | remove: ".html" %}
+      {% if item.path == page_path %}
+      underline underline-offset-4
+      {% endif %}
+      ">
         <a href="{{ item.path }}">{{ item.label }}</a>
       </li>
     {% endfor %}

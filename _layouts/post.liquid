@@ -1,17 +1,20 @@
 ---
   layout: base
 ---
-
-<h1>{{ title }}</h1>
-<div>
-  <span>Posted: {{ date_posted }}</span>
-</div>
-{% if date_edited %}
-<div>
-  <span>edited: {{ date_edited }}</span>
-</div>
-{% endif %}
-
 <article>
-  {{content}}
+
+  <div class="pb-8">
+    <h1 class="text-4xl">{{ title }}</h1>
+    <div>
+      <span>Posted: {{ date_posted | date_format }}</span>
+    </div>
+    {% if date_edited %}
+      <div>
+        <span>edited: {{ date_edited | date_format }}</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="prose">{{ content }}</div>
+
 </article>

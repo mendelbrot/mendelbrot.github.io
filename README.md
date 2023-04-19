@@ -174,3 +174,9 @@ Flex is the most flexible class, it's used for basically everything.
 When searching for help about custom widths i found out that you can enter them explicitly like this: `w-[740px]`.  And you can also put custom values in the `tailwind.config.js` to extend tailwind with your own styles.  I did this for the width of the page.  I didn't want a hardcoded value because it is entered in the header, the footer, and the base (so the divider lines can extend past the width of the page sections).  The class I created for this is used as `class="w-page"`.
 
 One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.
+
+# styling markdown
+
+Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the [markdown-it](https://www.npmjs.com/package/markdown-it) library doesn't do styling, just plain html.  I found [this article](https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8) that talks about two styling solutions with tailwind.  
+
+That article above might pre-date the [tailwind typography plugin](https://tailwindcss.com/docs/typography-plugin).  This is what i need.  It beautifully styles anything in a "prose" class and also provides several ways to override the styles.  

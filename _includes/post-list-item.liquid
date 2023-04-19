@@ -1,9 +1,10 @@
-<li>
-  <div>
-    <span>{{ post.data.date_posted }}</span>
-  </div>
-  
-  <a href="{{ post.url }}">
-    {{ post.data.title }}
+<li class="mb-8">
+  <a href="{{ post.url }}" class="hover:opacity-50">
+    <div>
+      <span class="text-2xl">{{ post.data.title }}</span>
+    </div>
+    <div>
+      <span>{{ post.data.date_posted | date_format }}</span>
+    </div>
   </a>
 </li>
