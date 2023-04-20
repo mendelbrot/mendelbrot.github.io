@@ -171,8 +171,6 @@ And likewise, getting the footer to stay at the bottom of the page even if there
 
 Flex is the most flexible class, it's used for basically everything.  
 
-**update:** the easiest way yo center horizontally is to set a max width and set the horizontal margin to auto: `max-w-prose mx-auto`
-
 When searching for help about custom widths i found out that you can enter them explicitly like this: `w-[740px]`.  And you can also put custom values in the `tailwind.config.js` to extend tailwind with your own styles.  
 
 **update:** custom width wasn't needed afterall because `max-w-prose` gives an optimal reading width of 65 characters.
@@ -210,8 +208,37 @@ and i define custom classes after the tailwind style imports in my 'styles.css`
 .break {
   @apply  h-2 sm:h-4
 }
+```
 
-.max-w-prose-center {
-  @apply max-w-prose mx-auto
-}
+# horizontal centering
+
+this was um, perplexing.  centering something of fixed width is no problem, but centering different things with max-width was a problem.    I think the prose class does something strange, if it is centered with flex max-width, it doesn't reduce size on small screen.  for other items (that are themselves flex row), the only way i found to keep the width on a wide screen and not shrink all their extra inner space is to center with flex, flex-1.  eventually i used a combination of techniques to get everything centered and correct width on all screen sizes but im not satisfied with this.
+
+```html
+<body class="
+  bg-blue-700 bg-opacity-70 
+  overflow-y-auto
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  ">
+
+  <header class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      {% include "header.liquid" %}
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-prose mx-auto">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      {% include "footer.liquid" %}
+    </div>
+  </footer>
+  
+</body>
 ```

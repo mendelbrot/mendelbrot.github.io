@@ -9,7 +9,3 @@
 .break {
   @apply  h-2 sm:h-4
 }
-
-.max-w-prose-center {
-  @apply max-w-prose mx-auto
-}
