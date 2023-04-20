@@ -978,6 +978,11 @@ video {
   visibility: hidden;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1018,12 +1023,16 @@ video {
   flex-direction: column;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .bg-blue-50 {
@@ -1138,12 +1147,6 @@ video {
   .break {
     height: 1rem;
   }
-}
-
-.max-w-prose-center {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 65ch;
 }
 
 .hover\:underline:hover {
