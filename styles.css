@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section {
+  @apply p-2 rounded-lg drop-shadow-md
+}
+
+.break {
+  @apply  h-2 sm:h-4
+}
+
+.max-w-prose-center {
+  @apply max-w-prose mx-auto
+}

@@ -1,6 +1,6 @@
 module.exports = {
   url: 'https://mendelbrot.github.io',
-  description: 'My hobbies and projects site.',
+  description: 'My hobbies and projects site',
   author: 'Gregory Maxedon',
   nav: [
     { path: '/', label: 'Home' },

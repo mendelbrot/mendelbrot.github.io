@@ -126,7 +126,7 @@ to actually provide links to the posts there's a `post-list.liquid` template in 
 ```javascript
 config.addCollection('posts', collection =>
   collection.getFilteredByGlob('_posts/*.md')
-    .sort((a, b) => b.date_posted - a.date_posted)
+    .sort((a, b) => b.data.date_posted - a.data.date_posted)
 )
 ```
 
@@ -171,7 +171,11 @@ And likewise, getting the footer to stay at the bottom of the page even if there
 
 Flex is the most flexible class, it's used for basically everything.  
 
-When searching for help about custom widths i found out that you can enter them explicitly like this: `w-[740px]`.  And you can also put custom values in the `tailwind.config.js` to extend tailwind with your own styles.  I did this for the width of the page.  I didn't want a hardcoded value because it is entered in the header, the footer, and the base (so the divider lines can extend past the width of the page sections).  The class I created for this is used as `class="w-page"`.
+**update:** the easiest way yo center horizontally is to set a max width and set the horizontal margin to auto: `max-w-prose mx-auto`
+
+When searching for help about custom widths i found out that you can enter them explicitly like this: `w-[740px]`.  And you can also put custom values in the `tailwind.config.js` to extend tailwind with your own styles.  
+
+**update:** custom width wasn't needed afterall because `max-w-prose` gives an optimal reading width of 65 characters.
 
 One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.
 
@@ -179,4 +183,35 @@ One thing i'm having difficulty with now is the social icons.  I found the icons
 
 Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the [markdown-it](https://www.npmjs.com/package/markdown-it) library doesn't do styling, just plain html.  I found [this article](https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8) that talks about two styling solutions with tailwind.  
 
-That article above might pre-date the [tailwind typography plugin](https://tailwindcss.com/docs/typography-plugin).  This is what i need.  It beautifully styles anything in a "prose" class and also provides several ways to override the styles.  
+**update:** the techniques in the article above weren't needed. the [tailwind typography plugin](https://tailwindcss.com/docs/typography-plugin) beautifully styles anything in a "prose" class and also provides several ways to override the styles.  
+
+# other blog sites to take inspiration from
+i think [this](https://blog.kittycooper.com/) is a nice looking blog.
+
+# more styling
+
+I redid the styling.  encountered [margin collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/).  decided, as ive done before, to use a fixed height div for vertical spacing.
+
+```html
+<div class="break"></div>
+```
+
+and i define custom classes after the tailwind style imports in my 'styles.css`
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+  @apply p-2 rounded-lg drop-shadow-md
+}
+
+.break {
+  @apply  h-2 sm:h-4
+}
+
+.max-w-prose-center {
+  @apply max-w-prose mx-auto
+}
+```

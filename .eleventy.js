@@ -25,7 +25,7 @@ module.exports = function(config) {
       .sort((a, b) => b.data.date_posted - a.data.date_posted)
   )
     
-  config.addFilter('date_format', (dateObj) => {
+  config.addFilter('date', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toUTC()
       .toLocaleString(DateTime.DATE_MED);
   });

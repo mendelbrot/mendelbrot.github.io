@@ -10,18 +10,14 @@ module.exports = {
         DEFAULT: {
           css: {
             '--tw-prose-body': theme('colors.black'),
-            // 'maxWidth': 'none'
+            'maxWidth': 'none'
           }
         }
       }),
-      width: {
-        'page': '65ch', // custom page width. use: class="w-page"
-      }
     },
   },
   plugins: [
     require('@tailwindcss/typography')
   ],
-  
 }
 

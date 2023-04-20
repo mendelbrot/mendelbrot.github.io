@@ -3,18 +3,20 @@
 ---
 <article>
 
-  <div class="pb-8">
+  <div class="section bg-green-100">
     <h1 class="text-4xl">{{ title }}</h1>
     <div>
-      <span>Posted: {{ date_posted | date_format }}</span>
+      <span>Posted: {{ date_posted | date }}</span>
     </div>
     {% if date_edited %}
       <div>
-        <span>edited: {{ date_edited | date_format }}</span>
+        <span>edited: {{ date_edited | date }}</span>
       </div>
     {% endif %}
   </div>
 
-  <div class="prose">{{ content }}</div>
+  <div class="break"></div>
+
+  <div class="section prose bg-blue-50">{{ content }}</div>
 
 </article>
