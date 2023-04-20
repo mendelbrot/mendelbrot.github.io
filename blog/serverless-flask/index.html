@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My hobbies and projects site">
+  <title>Gregory Maxedon</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body class="
+  bg-blue-700 bg-opacity-70 
+  overflow-y-scroll 
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  ">
+
+  <header class="max-w-prose">
+    
+<div class="section flex justify-between bg-red-100">
+  <a href="/">
+  <h1 class="text-3xl font-medium mb-2">Gregory Maxedon</h1>
+  <div>
+    <span class="text-xl opacity-80">My hobbies and projects site</span>
+  </div>
+</a>
+  <nav role="navigation">
+  <ul class="flex">
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      
+      ">
+        <a href="/">Home</a>
+      </li>
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      
+      ">
+        <a href="/about">About</a>
+      </li>
+    
+  </ul>
+</nav>
+</div>
+
+<div class="break"></div>
+  </header>
+
+  <main class="max-w-prose flex-1">
+    <article>
+
+  <div class="section bg-green-100">
+    <h1 class="text-4xl">Serverless Flask</h1>
+    <div>
+      <span>Posted: Apr 14, 2021</span>
+    </div>
+    
+  </div>
+
+  <div class="break"></div>
+
+  <div class="section prose bg-blue-50"><p><img src="/assets/images/demo-screenshots/2021-04-14-serverless-flask-api-client.png" alt="api client screenshot"></p>
+<p>This is a Serverless Flask application with basic features that many apps would need to get going. It has:</p>
+<ul>
+<li>environment variables</li>
+<li>a connection to a database</li>
+<li>logging</li>
+<li>json schema validation</li>
+</ul>
+<p>If you want to program in Python, and use Serverless, then Flask is a good choice because it's lightweight.  It transitions well from the original purpose as a server which is constantly running and handles everything, to becoming a micro-service with a small area of concern that's quickly spun up when needed and then shut down.</p>
+<p>Here's the project's GitHub repo: <a href="https://github.com/mendelbrot/serverless-flask">github.com/mendelbrot/serverless-flask</a></p>
+<p><a href="https://www.serverless.com/blog/flask-python-rest-api-serverless-lambda-dynamodb">Here's another Serverless Flask tutorial for reference.</a></p>
+<h2>Prerequisites</h2>
+<p>You have an AWS account and you've maybe used the <a href="https://aws.amazon.com/cli/">AWS CLI</a> before.  You have a <a href="https://www.mongodb.com/">MongoDB</a> or other database to connect to.</p>
+<p>To interact with it you'll need an API client like <a href="https://www.postman.com/downloads/">Postman</a> or <a href="https://insomnia.rest/download">insomnia</a>.</p>
+<h2>What this app does</h2>
+<p>It's expecting an HTTP POST request.  It will be a JSON request so it needs the header <code>Content-Type application/json</code>, and the request body has the form:</p>
+<pre><code>{
+    &quot;name&quot;: &quot;&lt;your name&gt;&quot;
+}
+</code></pre>
+<p>Note for if you're planning to change it to receive a GET request: HTTP POST requests have a body, but HTTP GET requests are not supposed to have a body.  If you want to add data to a GET request, you are limited to adding it as a url encoded <a href="https://en.wikipedia.org/wiki/Query_string">query string</a>.  I am not using GraphQL in this app, but this <a href="https://graphql.org/learn/serving-over-http/#get-request">GraphQL documentation</a> gives an example of this general practice.</p>
+<p>In my mongo database there's a people collection with a document having the property <code>name: &quot;Greg&quot;</code>.  When it finds a name it its people collection that matches the request, this app will respond with:</p>
+<pre><code>{
+    &quot;message&quot;: &quot;Hello &lt;your name&gt;!&quot;
+}
+</code></pre>
+<p>If it doesn't find the matching name or there is any other error, it responds with:</p>
+<pre><code>{
+    &quot;message&quot;: &quot;Did not find person.&quot;
+}
+</code></pre>
+<p>Just for fun, and for no particular reason, it also does schema validation on the request and response json.</p>
+<h2>Getting started</h2>
+<p>The first thing you would need to do is clone <a href="https://github.com/mendelbrot/serverless-flask">the repo</a> to a directory on your computer.</p>
+<p>This app is connected to a mongo database.  In the project directory, you will need to create a .env file and put in <code>DATABASE_URL=&lt;your database connection string&gt;</code>.  (Double check that it is git ignored.) I assume that you have a mongo database already set up, or you will change the code to connect to your preferred database.</p>
+<p>I'm using MongoDB Atlas and in order to connect from AWS I needed to open up network access to all ip addresses.  (This is a security risk but the database is still protected by the connection string.)  To do this I logged into <a href="https://cloud.mongodb.com/">cloud.mongodb.com</a>.  On the left, navigate to SECURITY / Network Access, then on the right, click + ADD IP ADDRESS, and enter <code>0.0.0.0/0</code>.  This will allow access from anywhere.</p>
+<p>Next, make sure <a href="https://www.npmjs.com/package/serverless">serverless</a> is installed.  Serverless is an npm package that is meant to be installed globally.  In Ubuntu, I had problems with permissions running global packages that were installed with sudo.  I did some research and found <a href="https://github.com/nvm-sh/nvm">nvm</a>, a version manager for node.  This is installed for the user (not requiring sudo) so it fixes the permission problem and has the added benefit that you can easily switch between different versions of node if you ever need to.</p>
+<p>To install nvm and get the latest long-term support version of node:</p>
+<pre><code>$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
+$ nvm install --lts
+</code></pre>
+<p>Then you will want to make sure you know what version you are using and have it set as the default.  I did <code>$ nvm ls 14</code> which gave me the exact version of node 14 I had installed.  (In my case it was 14.15.1)  And then I set that to be the default with <code>$ nvm alias default 14.15.1</code></p>
+<p>Once node was set up, I installed serverless globally:</p>
+<pre><code>npm i -g serverless
+</code></pre>
+<p>Then in the project directory, run <code>npm install</code> to create the node_modules folder with the packages serverless needs to run and deploy the app.  One package to mention is <a href="https://www.npmjs.com/package/serverless-wsgi">serverless-wsgi</a>.   It allows the app to be served locally for development and testing.</p>
+<p>Next, we need to install the Python packages.  I like to create a <a href="https://pypi.org/project/virtualenv/">virtual environment</a> in the project directory:</p>
+<pre><code>$ virtualenv venv --python=python3
+</code></pre>
+<p>To activate and deactivate the environment:</p>
+<pre><code>$ source venv/bin/activate
+$ deactivate
+</code></pre>
+<p>Now to install the packages.  This project uses a requirements.txt to keep track of the Python dependencies, much like the package.json tracks the node dependencies.</p>
+<p>To install the packages listed in requirements.txt:</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+<p>If you install new packages, you will need to add them to the requirements.txt file.  The command <code>$ pip freeze &gt; requirements.txt</code> will update requirements.txt with all of the packages currently installed in your venv.</p>
+<p>Before running anything, take a minute to make sure the settings in serverless.yml are good.  Here's a snippet of the provider and functions settings:</p>
+<pre><code>provider:
+  name: aws
+  runtime: python3.8
+  region: us-west-2
+
+functions:
+  app:
+    handler: wsgi_handler.handler
+    name: serverless-flask
+    events:
+      - http: 
+          path: /
+          method: get
+</code></pre>
+<p>Under provider, you can change the region, and you can put a profile name.  (The profile setting will use credentials from the specified <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">AWS profile</a> if you have those stored on your computer.)  Setting <code>profile: &lt;your profile&gt;</code> in serverless.yml would be equivalent to deploying with the <code>--profile &lt;your profile&gt;</code> option.</p>
+<p>Under functions, <code>name: serverless-flask</code> sets the name of the lambda function that's deployed.  Then under events, it's set to receive a get request at the root path.</p>
+<p>Now everything should be set to go LoL!</p>
+<p>To run locally:</p>
+<pre><code>$ sls wsgi serve
+</code></pre>
+<p>To deploy to AWS:</p>
+<pre><code>$ sls deploy
+</code></pre>
+</div>
+
+</article>
+  </main>
+
+  <footer class="max-w-prose">
+    <div class="break"></div>
+
+<div class="section flex justify-between bg-red-100">
+  <div class="invisible">
+    <span>Gregory Maxedon</span>
+  </div>
+  <ul class="flex">
+  <li class="pl-2 hover:opacity-50"><a href="https://github.com/mendelbrot">
+    <img src="./assets/social-icons/github.svg"></img>
+  </a></li>
+  <li class="pl-2 hover:opacity-50"><a href="https://www.linkedin.com/in/gregmaxedon/">LinkedIn</a></li>
+</ul>
+</div>
+  </footer>
+  
+</body>
+
+</html>
