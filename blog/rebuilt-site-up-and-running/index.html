@@ -57,14 +57,15 @@
 
   <main class="flex-1">
     <div class="max-w-prose mx-auto">
-      <article>
+      
+<article>
 
   <div class="section bg-green-100">
 
     <h1 class="text-4xl mb-2">Rebuilt Site&colon; Up and Running</h1>
 
     <div>
-      <span>Posted: Apr 22, 2021</span>
+      <span>Posted: Apr 21, 2021</span>
     </div>
 
     
@@ -78,9 +79,214 @@
   <div class="break"></div>
 
   <div class="section prose bg-blue-50"><p>I migrated my blog site from Jekyll to Eleventy.  The reason I switched is my blog was getting neglected and one of the barriers to working on it was yet again installing Ruby on my new OS and starting it up.  I also though it was time for me to try something new.</p>
-<p>Initially it was a greater barrier to set up 11ty than it was for Jekyll.  With Jekyll I used the minima template which works out of the box and I barely had to do any work.  In contrast, with 11ty, i didn't use a template.  Instead I studied other people's code, learned how it worked, and made it from scratch.  There were other complications, like three version of 11ty used by different example sites, and not much standardization around the directory structure of the sites because 11ty is not an opinionated framework.</p>
+<p>Initially it was harder to set up 11ty than Jekyll.  With Jekyll I used the minima template which works out of the box and I barely had to do any work.  In contrast, with 11ty, I didn't use a template.  Instead I studied other people's code, learned how it worked, and made it from scratch.  There were other complications, like three version of 11ty used by different example sites, and not much standardization around the directory structure of the sites because 11ty is not an opinionated framework.</p>
 <p>But now the setup is all but done, it's mine, and I'm happy with how it's turning out.</p>
-<p>Here is <a href="https://github.com/mendelbrot/mendelbrot.github.io">the repo</a>.  the rest of this post ia a copy of the readme as it stands today.</p>
+<p><img src="/assets/images/rebuilt-site/sc-1.png" alt="rebuilt site screenshot"></p>
+<p><a href="https://github.com/mendelbrot/mendelbrot.github.io">Here is the repo</a>.  I was keeping notes in the readme as i went, and i think these notes are good enough that can quote the readme as it is for the rest of this post.</p>
+<h2>running the dev server</h2>
+<pre><code>npm run serve
+</code></pre>
+<p>this command, defined in the <code>package.json</code> file does these things:</p>
+<ol>
+<li>deletes the the <code>_site</code> folder.  this is the output folder for the built site.  i've found it can get into an odd state, and i started manually deleting the folder often to be sure it didn't have stale files from the last build</li>
+<li>starts the eleventy dev server as a background process</li>
+<li>starts tailwind in watch mode</li>
+</ol>
+<p>the <code>package.json</code> file is short, so here's the whole file:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;mendelbrot.github.io&quot;,
+  &quot;version&quot;: &quot;2.0.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;serve&quot;: &quot;rm -r _site &amp;&amp; eleventy --serve &amp; npx tailwindcss -i ./styles.css -o ./_site/css/styles.css --watch&quot;,
+    &quot;build&quot;: &quot;eleventy &amp; npx tailwindcss -i ./styles.css -o ./_site/css/styles.css&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@11ty/eleventy&quot;: &quot;^2.0.1&quot;,
+    &quot;@tailwindcss/typography&quot;: &quot;^0.5.9&quot;,
+    &quot;tailwindcss&quot;: &quot;^3.3.1&quot;
+  }
+}
+</code></pre>
+<h2>tailwind set up</h2>
+<p>following <a href="https://5balloons.info/guide-tailwindcss-eleventy-static-site/">this tutorial</a>.  now it's set up for basic html.  no templates or anything.  but tailwind is set up and from the tutorial it is very clear how tailwind is used:</p>
+<p>the command</p>
+<pre><code>npx tailwindcss -i ./src/styles.css -o ./_site/css/styles.css
+</code></pre>
+<p>looks at the files specified in <code>tailwind.conf.js</code>, finds all the tailwind classes they plan to use, and builds <code>_site/css/styles.css</code> to make those classes.</p>
+<p>watching or building has two steps:</p>
+<ol>
+<li>with 11ty, build the html/js static site files in <code>_site</code></li>
+<li>with tailwind, build the css styles file</li>
+</ol>
+<p>import the styles in the html head section and then tailwind classes can be used everywhere:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/styles.css&quot;&gt;
+</code></pre>
+<h2>site organization</h2>
+<p>I'm mostly following the tutorials and blog site code below for guidance.</p>
+<ol>
+<li><a href="https://www.aleksandrhovhannisyan.com/blog/eleventy-the-good-the-bad-and-the-possum/">https://www.aleksandrhovhannisyan.com/blog/eleventy-the-good-the-bad-and-the-possum/</a></li>
+<li><a href="https://kittygiraudel.com/2020/11/30/from-jekyll-to-11ty/">https://kittygiraudel.com/2020/11/30/from-jekyll-to-11ty/</a></li>
+<li><a href="https://github.com/KittyGiraudel/site">https://github.com/KittyGiraudel/site</a></li>
+</ol>
+<p>I'm especially copying a lot form link 3, the blog site by Kitty Giraudel.  I'm migrating from Jekyll to 11ty and so is Kitty.  I'm using 11ty version 2 and so is Kitty.  And Kitty knows about this stuff and is following best practices.  So this is great for me.</p>
+<p>the organization is fairly consistent with jekyll.  the folders are:</p>
+<pre><code>_data
+_includes
+_layouts
+_pages
+_posts
+assets
+</code></pre>
+<p>the <code>_data</code> folder is pretty neat.  there's a file in it called <code>site.js</code>:</p>
+<pre><code class="language-javascript">module.exports = {
+  url: 'https://mendelbrot.github.io',
+  description: 'My hobbies and projects site.',
+  author: 'Gregory Maxedon',
+  nav: [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+  ],
+}
+</code></pre>
+<p>all of the data exported from <code>site.js</code> can be used in any page, for example as: <code>{{site.author}}</code>.  I don't have any configuration in <code>.eleventy.js</code> or anything to make it do this.  It seems to just work this way.</p>
+<p><code>_includes</code> is for components of pages like <code>footer.liquid</code> etc...</p>
+<p><code>_layouts</code> is for page layouts.  Currently there's the base layout <code>base.liquid</code> which includes the head, header, footer, and renders its content to the main section.  Every other layout and page has the base as its layout.  There's also the <code>post.liquid</code> layout for markdown blog posts.  It renders the title and date for the markdown child's fromt matter and renders the markdown.</p>
+<p>(I was a bit surprised when i found out that data from child templates is available in parent templates, but it is useful here.  Eleventy has this <a href="https://www.11ty.dev/docs/data-cascade/">data cascade</a>.  cool name.  probably a bit over my head.  but i'm happy there was a way to access the data i needed 😃)</p>
+<p><code>_pages</code> is for the actual web pages <code>home.liquid</code> and <code>about.liquid</code>.  these are built into html files in the <code>_site</code> output folder.  the path to the files in the <code>_site</code> folder is determined by the <a href="https://www.11ty.dev/docs/permalinks/">permalink</a> attribute in the markdown frontmatter.</p>
+<p>Here's an example of the about page:</p>
+<pre><code class="language-liquid">---
+layout: base
+permalink: about.html
+---
+
+{% markdown %}
+I’m Greg.  Lorum ipsum.
+{% endmarkdown %}
+</code></pre>
+<p>all of the liquid templates are able to use markdown sections like this.  This is something I learned from Kitty's blog. To allow this, put this in the <code>.eleventy.js</code>:</p>
+<pre><code class="language-javascript">const markdownIt = require('markdown-it')
+
+module.exports = function(config) {
+  
+  \\ snip
+
+  config.addPairedShortcode(
+    'markdown',
+    content =&gt; markdownIt().render(content)
+  )
+
+  \\ snip
+};
+</code></pre>
+<p>ok, posts.  in the <code>_posts</code> folder there's a <code>_posts.json</code> file:</p>
+<pre><code class="language-json">{
+  &quot;layout&quot;: &quot;post&quot;,
+  &quot;permalink&quot;: &quot;/blog/{{ page.fileSlug }}/&quot;
+}
+</code></pre>
+<p>this applies frontmater data to each file.  note that the permalink for the url and file location is set from the post's filename.  here's an example post <code>test-post.md</code>:</p>
+<pre><code class="language-markdown">---
+title: This is a test post!
+date_posted: 2023-04-16
+date_edited: 
+---
+
+lorum ipsum
+
+</code></pre>
+<p>to actually provide links to the posts there's a <code>post-list.liquid</code> template in the homepage.  to set this up, first create a collection in <code>.eleventy.js</code>:</p>
+<pre><code class="language-javascript">config.addCollection('posts', collection =&gt;
+  collection.getFilteredByGlob('_posts/*.md')
+    .sort((a, b) =&gt; b.data.date_posted - a.data.date_posted)
+)
+</code></pre>
+<p>then the collection can be accessed like so:</p>
+<pre><code class="language-liquid">&lt;ul&gt;
+  {% for post in posts %}
+  &lt;a href=&quot;{{ post.url }}&quot;&gt;
+    {{ post.data.title }}
+  &lt;/a&gt;
+  {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+<p>finally, the <code>assets</code> folder has images and icons.  it is not processed at all by eleventy, eleventy simply copies everything to an assets folder in <code>_site</code>.  this is set by <code>config.addPassthroughCopy('assets')</code> in <code>.eleventy.js</code></p>
+<h2>styling</h2>
+<p>I'm doing the styling by hand as an opportunity to learn tailwind.  I searched for help on how to horizontally center.  this is done with flex and justify:</p>
+<pre><code class="language-html">&lt;div class=&quot;flex justify-center&quot;&gt;
+  &lt;div&gt;
+    Horizontally centered
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>And likewise, getting the footer to stay at the bottom of the page even if there's not much content in the main section... that's also done with flex:</p>
+<pre><code class="language-html">&lt;div class=&quot;overflow-y-scroll flex flex-col min-h-screen&quot;&gt;
+  &lt;div class=&quot;flex-1&quot;&gt;
+    Main
+  &lt;/div&gt;
+  &lt;div&gt;
+    Footer
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Flex is the most flexible class, it's used for basically everything.</p>
+<p>When searching for help about custom widths i found out that you can enter them explicitly like this: <code>w-[740px]</code>.  And you can also put custom values in the <code>tailwind.config.js</code> to extend tailwind with your own styles.</p>
+<p><strong>update:</strong> custom width wasn't needed afterall because <code>max-w-prose</code> gives an optimal reading width of 65 characters.</p>
+<p>One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.</p>
+<p><strong>update:</strong> the svg i was using wouldn't open in inkscape either.   now im using <a href="https://github.com/simple-icons/simple-icons">simple icons</a></p>
+<h2>styling markdown</h2>
+<p>Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the <a href="https://www.npmjs.com/package/markdown-it">markdown-it</a> library doesn't do styling, just plain html.  I found <a href="https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8">this article</a> that talks about two styling solutions with tailwind.</p>
+<p><strong>update:</strong> the techniques in the article above weren't needed. the <a href="https://tailwindcss.com/docs/typography-plugin">tailwind typography plugin</a> beautifully styles anything in a &quot;prose&quot; class and also provides several ways to override the styles.</p>
+<h2>other blog sites to take inspiration from</h2>
+<p>i think <a href="https://blog.kittycooper.com/">this</a> is a nice looking blog.</p>
+<h2>more styling</h2>
+<p>I redid the styling.  encountered <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/">margin collapse</a>.  decided, as ive done before, to use a fixed height div for vertical spacing.</p>
+<pre><code class="language-html">&lt;div class=&quot;break&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>and i define custom classes after the tailwind style imports in my 'styles.css`</p>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+  @apply p-2 rounded-lg drop-shadow-md
+}
+
+.break {
+  @apply  h-2 sm:h-4
+}
+</code></pre>
+<h2>horizontal centering</h2>
+<p>this was um, perplexing.  centering something of fixed width is no problem, but centering different things with max-width was a problem.    I think the prose class does something strange, if it is centered with flex max-width, it doesn't reduce size on small screen.  for other items (that are themselves flex row), the only way i found to keep the width on a wide screen and not shrink all their extra inner space is to center with flex, flex-1.  eventually i used a combination of techniques to get everything centered and correct width on all screen sizes but im not satisfied with this.</p>
+<pre><code class="language-html">&lt;body class=&quot;
+  bg-blue-700 bg-opacity-70 
+  overflow-y-auto
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  &quot;&gt;
+
+  &lt;header class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;max-w-prose flex-1&quot;&gt;
+      {% include &quot;header.liquid&quot; %}
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class=&quot;flex-1&quot;&gt;
+    &lt;div class=&quot;max-w-prose mx-auto&quot;&gt;
+      {{ content }}
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;footer class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;max-w-prose flex-1&quot;&gt;
+      {% include &quot;footer.liquid&quot; %}
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+&lt;/body&gt;
+</code></pre>
+<h2>deployment to github pages</h2>
+<p>i followed <a href="https://www.linkedin.com/pulse/eleventy-github-pages-lea-tortay/">this article</a></p>
 </div>
 
 </article>
