@@ -3,11 +3,11 @@ layout: base
 permalink: index.html
 ---
 <div class="section bg-green-100">
-  <h1 class="text-3xl">Posts</h1>
+  <h1 class="text-3xl">Featured Posts</h1>
 </div>
 
 <div class="break"></div>
 
 <div class="section bg-blue-50">
-  {% include "post-list.liquid", posts: collections.posts  %}
+  {% include "post-list-detailed.liquid", posts: collections.featured_posts  %}
 </div>

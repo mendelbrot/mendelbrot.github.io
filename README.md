@@ -1,10 +1,10 @@
-# running the dev server
+## running the dev server
 
 ```
 npm run serve
 ```
 
-# tailwind set up
+## tailwind set up
 
 following [this tutorial](https://5balloons.info/guide-tailwindcss-eleventy-static-site/).  now it's set up for basic html.  no templates or anything.  but tailwind is set up and from the tutorial it is very clear how tailwind is used: 
 
@@ -24,7 +24,7 @@ import the styles in the html head section and then tailwind classes can be used
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
 ```
 
-# site organization
+## site organization
 
 I'm mostly following the tutorials and blog site code below for guidance.  
 
@@ -144,7 +144,7 @@ then the collection can be accessed like so:
 
 finally, the `assets` folder has images and icons.  it is not processed at all by eleventy, eleventy simply copies everything to an assets folder in `_site`.  this is set by `config.addPassthroughCopy('assets')` in `.eleventy.js`
 
-# styling
+## styling
 
 I'm doing the styling by hand as an opportunity to learn tailwind.  I searched for help on how to horizontally center.  this is done with flex and justify:
 
@@ -179,7 +179,7 @@ One thing i'm having difficulty with now is the social icons.  I found the icons
 
 **update:** the svs i was using wouldn't open in inkscape either.   now im using [simple icons](https://github.com/simple-icons/simple-icons)
 
-# styling markdown
+## styling markdown
 
 Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the [markdown-it](https://www.npmjs.com/package/markdown-it) library doesn't do styling, just plain html.  I found [this article](https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8) that talks about two styling solutions with tailwind.  
 
@@ -212,7 +212,7 @@ and i define custom classes after the tailwind style imports in my 'styles.css`
 }
 ```
 
-# horizontal centering
+## horizontal centering
 
 this was um, perplexing.  centering something of fixed width is no problem, but centering different things with max-width was a problem.    I think the prose class does something strange, if it is centered with flex max-width, it doesn't reduce size on small screen.  for other items (that are themselves flex row), the only way i found to keep the width on a wide screen and not shrink all their extra inner space is to center with flex, flex-1.  eventually i used a combination of techniques to get everything centered and correct width on all screen sizes but im not satisfied with this.
 
@@ -245,5 +245,6 @@ this was um, perplexing.  centering something of fixed width is no problem, but 
 </body>
 ```
 
-# deployment to github pages
+## deployment to github pages
+
 i followed [this article](https://www.linkedin.com/pulse/eleventy-github-pages-lea-tortay/)

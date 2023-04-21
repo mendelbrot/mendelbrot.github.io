@@ -24,6 +24,12 @@ module.exports = function(config) {
     collection.getFilteredByGlob('_posts/*.md')
       .sort((a, b) => b.data.date_posted - a.data.date_posted)
   )
+
+  config.addCollection('featured_posts', collection => 
+    collection.getFilteredByGlob('_posts/*.md')
+      .filter(p => p.data.tags?.includes('featured'))
+      .sort((a, b) => b.data.date_posted - a.data.date_posted)
+  )
     
   config.addFilter('date', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toUTC()
