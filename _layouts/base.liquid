@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "head.liquid" %}
+
+<body class="
+  bg-blue-700 bg-opacity-70 
+  overflow-y-auto
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  ">
+
+  <header class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      {% include "header.liquid" %}
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-prose mx-auto">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      {% include "footer.liquid" %}
+    </div>
+  </footer>
+  
+</body>
+
+</html>
