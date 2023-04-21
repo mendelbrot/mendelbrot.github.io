@@ -177,6 +177,8 @@ When searching for help about custom widths i found out that you can enter them 
 
 One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.
 
+**update:** the svs i was using wouldn't open in inkscape either.   now im using [simple icons](https://github.com/simple-icons/simple-icons)
+
 # styling markdown
 
 Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the [markdown-it](https://www.npmjs.com/package/markdown-it) library doesn't do styling, just plain html.  I found [this article](https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8) that talks about two styling solutions with tailwind.  
@@ -242,3 +244,6 @@ this was um, perplexing.  centering something of fixed width is no problem, but 
   
 </body>
 ```
+
+# deployment to github pages
+i followed [this article](https://www.linkedin.com/pulse/eleventy-github-pages-lea-tortay/)

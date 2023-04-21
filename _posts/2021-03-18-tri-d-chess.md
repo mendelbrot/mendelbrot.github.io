@@ -17,7 +17,7 @@ In [this subsequent post](/2021/03/27/exploring-tri-d-chess-rules.html) I discus
 
 The links below are a collection of scraps of info pulled together from different sites and questionable sources. Most of the links are about Tri-D chess. Some of them are about related 3D or multi-level chess games that I found interesting/relevant.
 
-1. [Memory Alpha facts about 3D chess in Star Trek](https://memory-alpha.fandom.com/wiki/Three-dimensional_c hess)
+1. [Memory Alpha facts about 3D chess in Star Trek](https://memory-alpha.fandom.com/wiki/Three-dimensional_chess)
 2. [chessvariants.com 3D Star Trek chess page](https://www.chessvariants.com/3d.dir/startrek.html)
 3. [Three-dimensional chess wikipedia](https://en.wikipedia.org/wiki/Three-dimensional_chess)
 4. [Jens Meder site with rules and a photo gallery](http://meder.spacechess.org/3dschach/indexe.html)
