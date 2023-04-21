@@ -995,6 +995,10 @@ video {
   margin-left: 1rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -1124,6 +1128,10 @@ video {
   opacity: 0.8;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .section {
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -1150,6 +1158,10 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
   .sm\:p-4 {
     padding: 1rem;
   }

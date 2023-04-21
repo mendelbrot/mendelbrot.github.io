@@ -18,16 +18,13 @@
 
   <header class="flex justify-center">
     <div class="max-w-prose flex-1">
-      
-<div class="section flex justify-between bg-red-100">
+      <div class="section flex justify-between bg-red-100">
   <a href="/">
   <h1 class="text-4xl mb-2">Gregory Maxedon</h1>
-  <div>
-    <span class="text-xl opacity-80">My hobbies and projects site</span>
-  </div>
+  <p class="text-xl opacity-80">My hobbies and projects site</p>
 </a>
   <nav role="navigation">
-  <ul class="flex">
+  <ul class="flex flex-col sm:flex-row">
     
       <li class="flex-initial text-2xl ml-4 hover:opacity-50 
       
@@ -36,6 +33,13 @@
       
       ">
         <a href="/">Home</a>
+      </li>
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      
+      ">
+        <a href="/posts">Posts</a>
       </li>
     
       <li class="flex-initial text-2xl ml-4 hover:opacity-50 
@@ -56,7 +60,7 @@
   <main class="flex-1">
     <div class="max-w-prose mx-auto">
       <div class="section bg-green-100">
-  <h1 class="text-3xl">Posts</h1>
+  <h1 class="text-3xl">Featured Posts</h1>
 </div>
 
 <div class="break"></div>
@@ -66,45 +70,37 @@
   
     <li class="mb-8">
       <a href="/blog/serverless-flask/" class="text-blue-950 hover:opacity-50">
+        
         <div>
           <span class="text-2xl">Serverless Flask</span>
         </div>
+
         <div>
           <span>Apr 14, 2021</span>
         </div>
+
+        
+        <p class="text-md opacity-80 mt-2">I can never remember the terminal command to set up a python virtual environment, so every time a have to do it, I remember it's on my blog and look it up here.</p>
+        
+
       </a>
     </li>
   
     <li class="mb-8">
       <a href="/blog/return-to-mars-demo/" class="text-blue-950 hover:opacity-50">
+        
         <div>
           <span class="text-2xl">Return To Mars Demo</span>
         </div>
+
         <div>
           <span>Mar 29, 2021</span>
         </div>
-      </a>
-    </li>
-  
-    <li class="mb-8">
-      <a href="/blog/exploring-tri-d-chess-rules/" class="text-blue-950 hover:opacity-50">
-        <div>
-          <span class="text-2xl">Exploring Tri-D Chess Rules</span>
-        </div>
-        <div>
-          <span>Mar 27, 2021</span>
-        </div>
-      </a>
-    </li>
-  
-    <li class="mb-8">
-      <a href="/blog/tri-d-chess/" class="text-blue-950 hover:opacity-50">
-        <div>
-          <span class="text-2xl">Tri-D Chess</span>
-        </div>
-        <div>
-          <span>Mar 18, 2021</span>
-        </div>
+
+        
+        <p class="text-md opacity-80 mt-2">I'm still proud of this game (made with react).  It's retro, with a UI design inspired by the original Star Trek.  It's still hosted on s3 for anyone to try, however, if you're on your phone, be warned that it isn't mobile responsive.</p>
+        
+
       </a>
     </li>
   
