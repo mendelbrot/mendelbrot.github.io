@@ -2,7 +2,7 @@
 templateEngineOverride: md
 layout: post
 title: Rebuilt Site&colon; Up and Running
-date_posted: 2021-04-21
+date_posted: 2023-04-21
 stage: active
 description:
   This site is now totally rebuilt with Eleventy.  This post documents the process of getting here over the last few days.  Much of this post is actually taken from the site's readme.
