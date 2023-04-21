@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* sections are the muilding blocks of my site's layout */
 .section {
   @apply p-2 rounded-lg drop-shadow-md
 }
 
+/* a vertical spacer.  usage: <div class="break"></div> */
 .break {
   @apply  h-2 sm:h-4
+}
+
+/* this is to make sure text doesn't overflow 
+when viewing markdown prose on a small screen 
+specifically had problem with long links */
+.prose { 
+  @apply break-words
 }

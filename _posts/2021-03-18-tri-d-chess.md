@@ -3,6 +3,7 @@ layout: post
 title: Tri-D Chess
 date_posted: 2021-03-18
 date_edited: 2021-03-27
+stage: active
 # categories: tri-d-chess
 # tags: star-trek 3D-chess Tri-D-chess multi-level-chess
 ---
@@ -11,7 +12,7 @@ date_edited: 2021-03-27
 
 This post is about the 3D chess game that was a prop on the original Star Trek series. Some trekkies have built their own Tri-D chess sets and made up rules based on blueprints and instructions written it the 1975 Star Fleet Technical Manual [14].  I'll summarize the most popular way of playing Tri-D chess, giving a brief history with some references, and will give a summary of the currently popular fan-made rules.
 
-In [this subsequent post](/2021/03/27/exploring-tri-d-chess-rules.html) I discuss some principles for inventing rules for this sort of chess, which I call *multi-level chess*, and I share a set of rules-in-progress that I made up myself. 
+In [this subsequent post](/blog/exploring-tri-d-chess-rules) I discuss some principles for inventing rules for this sort of chess, which I call *multi-level chess*, and I share a set of rules-in-progress that I made up myself. 
 
 ## Research
 
@@ -119,7 +120,7 @@ These diagrams show the starting positions and board arrangement. They are fom M
 
 ## In summary
 
-The Tri-D chess set is a beautiful design and It's fun to design game rules for it. I think I can improve on the current popular rules, [this is the topic of another post](/2021/03/27/exploring-tri-d-chess-rules.html). Tri-D chess is a *multi-level* chess variants, a category that I made up. 
+The Tri-D chess set is a beautiful design and It's fun to design game rules for it. I think I can improve on the current popular rules, [this is the topic of another post](/blog/exploring-tri-d-chess-rules). Tri-D chess is a *multi-level* chess variants, a category that I made up. 
 
 <!-- Here's a cardboard prototype chessboard that I made in 2017: -->
 

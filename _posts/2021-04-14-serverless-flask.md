@@ -2,6 +2,7 @@
 layout: post
 title: Serverless Flask
 date_posted: 2021-04-14
+stage: active
 description:
   I can never remember the terminal command to set up a python virtual environment, so every time a have to do it, I remember it's on my blog and look it up here.
 tags: 

@@ -35,7 +35,7 @@ following [this tutorial](https://5balloons.info/guide-tailwindcss-eleventy-stat
 
 the command
 ```
-npx tailwindcss -i ./src/tailwind.css -o ./_site/css/styles.css
+npx tailwindcss -i ./src/styles.css -o ./_site/css/styles.css
 ```
 looks at the files specified in `tailwind.conf.js`, finds all the tailwind classes they plan to use, and builds `_site/css/styles.css` to make those classes.
 
@@ -101,12 +101,13 @@ Here's an example of the about page:
 layout: base
 permalink: about.html
 ---
-  {% markdown %}
-  I’m Greg.  Lorum ipsum.
-  {% endmarkdown %}
+
+{% markdown %}
+I’m Greg.  Lorum ipsum.
+{% endmarkdown %}
 ```
 
-pages - in fact all of the liquid templates - are able to use markdown sections like this.  This is something I learned from Kitty's blog. To allow this, put this in the `.eleventy.js`:
+all of the liquid templates are able to use markdown sections like this.  This is something I learned from Kitty's blog. To allow this, put this in the `.eleventy.js`:
 
 ```javascript
 const markdownIt = require('markdown-it')
@@ -202,7 +203,7 @@ When searching for help about custom widths i found out that you can enter them 
 
 One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.
 
-**update:** the svs i was using wouldn't open in inkscape either.   now im using [simple icons](https://github.com/simple-icons/simple-icons)
+**update:** the svg i was using wouldn't open in inkscape either.   now im using [simple icons](https://github.com/simple-icons/simple-icons)
 
 ## styling markdown
 
@@ -210,10 +211,10 @@ Oh I've got bigger problems then the social icons not rendering.  I just discove
 
 **update:** the techniques in the article above weren't needed. the [tailwind typography plugin](https://tailwindcss.com/docs/typography-plugin) beautifully styles anything in a "prose" class and also provides several ways to override the styles.  
 
-# other blog sites to take inspiration from
+## other blog sites to take inspiration from
 i think [this](https://blog.kittycooper.com/) is a nice looking blog.
 
-# more styling
+## more styling
 
 I redid the styling.  encountered [margin collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/).  decided, as ive done before, to use a fixed height div for vertical spacing.
 

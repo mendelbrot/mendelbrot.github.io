@@ -3,8 +3,7 @@ name: Eleventy Build
 on:
   push:
     branches:
-      - master
-      - 11ty
+      - main
       
 jobs:
   deploy:

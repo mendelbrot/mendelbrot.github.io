@@ -1,13 +1,6 @@
 const markdownIt = require('markdown-it')
 const { DateTime } = require("luxon")
 
-// const mdStyles = {
-//   h1: ['text-4xl', 'text-red-400', 'font-bold'],
-//   a: ['text-blue-300', 'hover:underline'],
-//   code: 'bg-blue-500',
-//   p: ['bg-green-500']
-// }
-
 module.exports = function(config) {
   
   config.addPassthroughCopy('assets')
@@ -22,12 +15,16 @@ module.exports = function(config) {
 
   config.addCollection('posts', collection => 
     collection.getFilteredByGlob('_posts/*.md')
+      .filter(p => p.data.stage === 'active')
       .sort((a, b) => b.data.date_posted - a.data.date_posted)
   )
 
   config.addCollection('featured_posts', collection => 
     collection.getFilteredByGlob('_posts/*.md')
-      .filter(p => p.data.tags?.includes('featured'))
+      .filter(p => 
+        p.data.stage === 'active' && 
+        p.data.tags?.includes('featured')
+      )
       .sort((a, b) => b.data.date_posted - a.data.date_posted)
   )
     
