@@ -1,10 +1,14 @@
 ---
 layout: post
 title: Return To Mars Demo
-date: 2021-03-29 10:00 -0700
+date_posted: 2021-03-29
+stage: active
+description: 
+  I'm still proud of this game (made with react).  It's retro, with a UI design inspired by the original Star Trek.  It's still hosted on s3 for anyone to try, however, if you're on your phone, be warned that it isn't mobile responsive.
+tags: 
+  - featured
 # edited: 2021-03-18 10:00 -0700
 # categories: software-programming
-# tags: 
 ---
 
 ![return to mars screenshot](/assets/images/demo-screenshots/return-to-mars.png)

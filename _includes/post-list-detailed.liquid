@@ -1,0 +1,21 @@
+<ul>
+  {% for post in posts %}
+    <li class="mb-8">
+      <a href="{{ post.url }}" class="text-blue-950 hover:opacity-50">
+        
+        <div>
+          <span class="text-2xl">{{ post.data.title }}</span>
+        </div>
+
+        <div>
+          <span>{{ post.data.date_posted | date }}</span>
+        </div>
+
+        {% if post.data.description %}
+        <p class="text-md opacity-80 mt-2">{{ post.data.description }}</p>
+        {% endif %}
+
+      </a>
+    </li>
+  {% endfor %}
+</ul>
