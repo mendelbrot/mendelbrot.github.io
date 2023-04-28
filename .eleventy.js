@@ -5,6 +5,9 @@ module.exports = function(config) {
   
   config.addPassthroughCopy('assets')
 
+  // copy the site documentation / notes pages
+  config.addPassthroughCopy({ "docs/book": "docs" })
+
   const md = markdownIt({ linkify: true, html: true })
   config.setLibrary('md', md)
 
