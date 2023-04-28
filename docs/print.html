@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Docs</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="running-the-dev-server.html"><strong aria-hidden="true">1.</strong> running the dev server</a></li><li class="chapter-item expanded "><a href="tailwind-set-up.html"><strong aria-hidden="true">2.</strong> tailwind set up</a></li><li class="chapter-item expanded "><a href="site-organization.html"><strong aria-hidden="true">3.</strong> site organization</a></li><li class="chapter-item expanded "><a href="styling.html"><strong aria-hidden="true">4.</strong> styling</a></li><li class="chapter-item expanded "><a href="styling-markdown.html"><strong aria-hidden="true">5.</strong> styling markdown</a></li><li class="chapter-item expanded "><a href="more-styling.html"><strong aria-hidden="true">6.</strong> more styling</a></li><li class="chapter-item expanded "><a href="horizontal-centering.html"><strong aria-hidden="true">7.</strong> horizontal centering</a></li><li class="chapter-item expanded "><a href="deployment-to-github-pages.html"><strong aria-hidden="true">8.</strong> deployment to github pages</a></li><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">9.</strong> documentation</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="running-the-dev-server"><a class="header" href="#running-the-dev-server">running the dev server</a></h1>
+<pre><code>npm run serve
+</code></pre>
+<p>this command, defined in the <code>package.json</code> file does these things:</p>
+<ol>
+<li>deletes the the <code>_site</code> folder.  this is the output folder for the built site.  i've found it can get into an odd state, and i started manually deleting the folder often to be sure it didn't have stale files from the last build</li>
+<li>starts the eleventy dev server as a background process</li>
+<li>starts tailwind in watch mode</li>
+</ol>
+<p>the <code>package.json</code> file is short, so here's the whole file:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;mendelbrot.github.io&quot;,
+  &quot;version&quot;: &quot;2.0.0&quot;,
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;serve&quot;: &quot;rm -r _site &amp;&amp; eleventy --serve &amp; npx tailwindcss -i ./styles.css -o ./_site/css/styles.css --watch&quot;,
+    &quot;build&quot;: &quot;eleventy &amp; npx tailwindcss -i ./styles.css -o ./_site/css/styles.css&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@11ty/eleventy&quot;: &quot;^2.0.1&quot;,
+    &quot;@tailwindcss/typography&quot;: &quot;^0.5.9&quot;,
+    &quot;tailwindcss&quot;: &quot;^3.3.1&quot;
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tailwind-set-up"><a class="header" href="#tailwind-set-up">tailwind set up</a></h1>
+<p>following <a href="https://5balloons.info/guide-tailwindcss-eleventy-static-site/">this tutorial</a>.  now it's set up for basic html.  no templates or anything.  but tailwind is set up and from the tutorial it is very clear how tailwind is used: </p>
+<p>the command</p>
+<pre><code>npx tailwindcss -i ./src/styles.css -o ./_site/css/styles.css
+</code></pre>
+<p>looks at the files specified in <code>tailwind.conf.js</code>, finds all the tailwind classes they plan to use, and builds <code>_site/css/styles.css</code> to make those classes.</p>
+<p>watching or building has two steps:</p>
+<ol>
+<li>with 11ty, build the html/js static site files in <code>_site</code></li>
+<li>with tailwind, build the css styles file</li>
+</ol>
+<p>import the styles in the html head section and then tailwind classes can be used everywhere:</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/styles.css&quot;&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="site-organization"><a class="header" href="#site-organization">site organization</a></h1>
+<p>I'm mostly following the tutorials and blog site code below for guidance.</p>
+<ol>
+<li>https://www.aleksandrhovhannisyan.com/blog/eleventy-the-good-the-bad-and-the-possum/</li>
+<li>https://kittygiraudel.com/2020/11/30/from-jekyll-to-11ty/</li>
+<li>https://github.com/KittyGiraudel/site</li>
+</ol>
+<p>I'm especially copying a lot form link 3, the blog site by Kitty Giraudel.  I'm migrating from Jekyll to 11ty and so is Kitty.  I'm using 11ty version 2 and so is Kitty.  And Kitty knows about this stuff and is following best practices.  So this is great for me.</p>
+<p>the organization is fairly consistent with jekyll.  the folders are:</p>
+<pre><code>_data
+_includes
+_layouts
+_pages
+_posts
+assets
+</code></pre>
+<p>the <code>_data</code> folder is pretty neat.  there's a file in it called <code>site.js</code>:</p>
+<pre><code class="language-javascript">module.exports = {
+  url: 'https://mendelbrot.github.io',
+  description: 'My hobbies and projects site.',
+  author: 'Gregory Maxedon',
+  nav: [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+  ],
+}
+</code></pre>
+<p>all of the data exported from <code>site.js</code> can be used in any page, for example as: <code>{{site.author}}</code>.  I don't have any configuration in <code>.eleventy.js</code> or anything to make it do this.  It seems to just work this way.</p>
+<p><code>_includes</code> is for components of pages like <code>footer.liquid</code> etc...</p>
+<p><code>_layouts</code> is for page layouts.  Currently there's the base layout <code>base.liquid</code> which includes the head, header, footer, and renders its content to the main section.  Every other layout and page has the base as its layout.  There's also the <code>post.liquid</code> layout for markdown blog posts.  It renders the title and date for the markdown child's fromt matter and renders the markdown.</p>
+<p>(I was a bit surprised when i found out that data from child templates is available in parent templates, but it is useful here.  Eleventy has this <a href="https://www.11ty.dev/docs/data-cascade/">data cascade</a>.  cool name.  probably a bit over my head.  but i'm happy there was a way to access the data i needed 😃)</p>
+<p><code>_pages</code> is for the actual web pages <code>home.liquid</code> and <code>about.liquid</code>.  these are built into html files in the <code>_site</code> output folder.  the path to the files in the <code>_site</code> folder is determined by the <a href="https://www.11ty.dev/docs/permalinks/">permalink</a> attribute in the markdown frontmatter.</p>
+<p>Here's an example of the about page: </p>
+<pre><code class="language-liquid">---
+layout: base
+permalink: about.html
+---
+
+{% markdown %}
+I’m Greg.  Lorum ipsum.
+{% endmarkdown %}
+</code></pre>
+<p>all of the liquid templates are able to use markdown sections like this.  This is something I learned from Kitty's blog. To allow this, put this in the <code>.eleventy.js</code>:</p>
+<pre><code class="language-javascript">const markdownIt = require('markdown-it')
+
+module.exports = function(config) {
+  
+  \\ snip
+
+  config.addPairedShortcode(
+    'markdown',
+    content =&gt; markdownIt().render(content)
+  )
+
+  \\ snip
+};
+</code></pre>
+<p>ok, posts.  in the <code>_posts</code> folder there's a <code>_posts.json</code> file:</p>
+<pre><code class="language-json">{
+  &quot;layout&quot;: &quot;post&quot;,
+  &quot;permalink&quot;: &quot;/blog/{{ page.fileSlug }}/&quot;
+}
+</code></pre>
+<p>this applies frontmater data to each file.  note that the permalink for the url and file location is set from the post's filename.  here's an example post <code>test-post.md</code>:</p>
+<pre><code class="language-markdown">---
+title: This is a test post!
+date_posted: 2023-04-16
+date_edited: 
+---
+
+lorum ipsum
+
+</code></pre>
+<p>to actually provide links to the posts there's a <code>post-list.liquid</code> template in the homepage.  to set this up, first create a collection in <code>.eleventy.js</code>:</p>
+<pre><code class="language-javascript">config.addCollection('posts', collection =&gt;
+  collection.getFilteredByGlob('_posts/*.md')
+    .sort((a, b) =&gt; b.data.date_posted - a.data.date_posted)
+)
+</code></pre>
+<p>then the collection can be accessed like so:</p>
+<pre><code class="language-liquid">&lt;ul&gt;
+  {% for post in posts %}
+  &lt;a href=&quot;{{ post.url }}&quot;&gt;
+    {{ post.data.title }}
+  &lt;/a&gt;
+  {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+<p>finally, the <code>assets</code> folder has images and icons.  it is not processed at all by eleventy, eleventy simply copies everything to an assets folder in <code>_site</code>.  this is set by <code>config.addPassthroughCopy('assets')</code> in <code>.eleventy.js</code></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="styling"><a class="header" href="#styling">styling</a></h1>
+<p>I'm doing the styling by hand as an opportunity to learn tailwind.  I searched for help on how to horizontally center.  this is done with flex and justify:</p>
+<pre><code class="language-html">&lt;div class=&quot;flex justify-center&quot;&gt;
+  &lt;div&gt;
+    Horizontally centered
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>And likewise, getting the footer to stay at the bottom of the page even if there's not much content in the main section... that's also done with flex:</p>
+<pre><code class="language-html">&lt;div class=&quot;overflow-y-scroll flex flex-col min-h-screen&quot;&gt;
+  &lt;div class=&quot;flex-1&quot;&gt;
+    Main
+  &lt;/div&gt;
+  &lt;div&gt;
+    Footer
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Flex is the most flexible class, it's used for basically everything.</p>
+<p>When searching for help about custom widths i found out that you can enter them explicitly like this: <code>w-[740px]</code>.  And you can also put custom values in the <code>tailwind.config.js</code> to extend tailwind with your own styles.</p>
+<p><strong>update:</strong> custom width wasn't needed afterall because <code>max-w-prose</code> gives an optimal reading width of 65 characters.</p>
+<p>One thing i'm having difficulty with now is the social icons.  I found the icons that the jekyll theme minima uses and I copied the folder to my assets but i haven't quite got the icon to render yet.</p>
+<p><strong>update:</strong> the svg i was using wouldn't open in inkscape either.   now im using <a href="https://github.com/simple-icons/simple-icons">simple icons</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="styling-markdown"><a class="header" href="#styling-markdown">styling markdown</a></h1>
+<p>Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the <a href="https://www.npmjs.com/package/markdown-it">markdown-it</a> library doesn't do styling, just plain html.  I found <a href="https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8">this article</a> that talks about two styling solutions with tailwind.</p>
+<p><strong>update:</strong> the techniques in the article above weren't needed. the <a href="https://tailwindcss.com/docs/typography-plugin">tailwind typography plugin</a> beautifully styles anything in a &quot;prose&quot; class and also provides several ways to override the styles.</p>
+<h2 id="other-blog-sites-to-take-inspiration-from"><a class="header" href="#other-blog-sites-to-take-inspiration-from">other blog sites to take inspiration from</a></h2>
+<p>i think <a href="https://blog.kittycooper.com/">this</a> is a nice looking blog.</p>
+<h2 id="more-styling"><a class="header" href="#more-styling">more styling</a></h2>
+<p>I redid the styling.  encountered <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/">margin collapse</a>.  decided, as ive done before, to use a fixed height div for vertical spacing.</p>
+<pre><code class="language-html">&lt;div class=&quot;break&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>and i define custom classes after the tailwind style imports in my 'styles.css`</p>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+  @apply p-2 rounded-lg drop-shadow-md
+}
+
+.break {
+  @apply  h-2 sm:h-4
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="more-styling-1"><a class="header" href="#more-styling-1">more styling</a></h1>
+<p>I redid the styling.  encountered <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/">margin collapse</a>.  decided, as ive done before, to use a fixed height div for vertical spacing.</p>
+<pre><code class="language-html">&lt;div class=&quot;break&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>and i define custom classes after the tailwind style imports in my 'styles.css`</p>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section {
+  @apply p-2 rounded-lg drop-shadow-md
+}
+
+.break {
+  @apply  h-2 sm:h-4
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="horizontal-centering"><a class="header" href="#horizontal-centering">horizontal-centering</a></h1>
+<p>this was um, perplexing.  centering something of fixed width is no problem, but centering different things with max-width was a problem.    I think the prose class does something strange, if it is centered with flex max-width, it doesn't reduce size on small screen.  for other items (that are themselves flex row), the only way i found to keep the width on a wide screen and not shrink all their extra inner space is to center with flex, flex-1.  eventually i used a combination of techniques to get everything centered and correct width on all screen sizes but im not satisfied with this.</p>
+<pre><code class="language-html">&lt;body class=&quot;
+  bg-blue-700 bg-opacity-70 
+  overflow-y-auto
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  &quot;&gt;
+
+  &lt;header class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;max-w-prose flex-1&quot;&gt;
+      {% include &quot;header.liquid&quot; %}
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class=&quot;flex-1&quot;&gt;
+    &lt;div class=&quot;max-w-prose mx-auto&quot;&gt;
+      {{ content }}
+    &lt;/div&gt;
+  &lt;/main&gt;
+
+  &lt;footer class=&quot;flex justify-center&quot;&gt;
+    &lt;div class=&quot;max-w-prose flex-1&quot;&gt;
+      {% include &quot;footer.liquid&quot; %}
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+&lt;/body&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployment-to-github-pages"><a class="header" href="#deployment-to-github-pages">deployment to github pages</a></h1>
+<p>i followed <a href="https://www.linkedin.com/pulse/eleventy-github-pages-lea-tortay/">this article</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="documentation"><a class="header" href="#documentation">documentation</a></h1>
+<p>i have a new documentation system that i'm pretty excited about and i plan to use it with my other projects too.</p>
+<p>basically i now have a <code>/docs</code> folder in the repo where i keep a collection of markdown files with my notes that i keep as i work.  that's the essence of my system, the rest is just icing.</p>
+<p>my notes are compiled into an html book by a rust program called <a href="https://rust-lang.github.io/mdBook/">mdBook</a> and eleventy includes this book in its build so anyone can view the site's documentation at the <code>/docs</code> route of the site.</p>
+<p>another feature of my documentation system is the use of a text markup language for diagrams.  i use a markup language called <a href="https://mermaid.js.org/">mermaid</a>.  the mermaid markup files are in a <code>/diagrams</code> folder.  i use the <a href="">mermaid cli</a> and a bash script to build <code>.png</code> files in a <code>\images</code> folder from the diagram <code>.mmd</code> text files.  this is the script:</p>
+<pre><code class="language-bash">#!/bin/bash
+
+# this script is for building .png diagrams from 
+# the mermaid .mmd text files.
+# the mermaid cli is installed globally via npm.
+#
+# this script just runs mmdc to build a .png file 
+# in /images for each .mmd file in /diagrams
+#
+# https://github.com/mermaid-js/mermaid-cli
+# npm install -g @mermaid-js/mermaid-cli
+# mmdc -i input.mmd -o output.png -t forest
+
+src_dir=$( cd &quot;$(dirname &quot;${BASH_SOURCE[0]}&quot;)&quot; ; pwd -P )/src
+
+for file in &quot;${src_dir}&quot;/diagrams/*.mmd
+do
+  basename=&quot;$(basename -- $file)&quot;
+  basename_png=${basename%.mmd}.png
+  echo $( \
+    mmdc \
+      -i &quot;${file}&quot; \
+      -o &quot;${src_dir}&quot;/images/&quot;${basename_png}&quot;\
+      -t forest \
+  )
+done
+</code></pre>
+<p>with a plugin, it is also possible to use mermaid markup in code blocks in the markdown itself.  I considered this but decided that for my purposes it's more versatile to keep the markdown markup and the mermaid markup decoupled.</p>
+<p>here's an example diagram!</p>
+<p><img src="./images/doc-mindmap.png" alt="documentation mindmap" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
