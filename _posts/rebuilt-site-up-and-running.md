@@ -3,9 +3,10 @@ templateEngineOverride: md
 layout: post
 title: Rebuilt Site&colon; Up and Running
 date_posted: 2023-04-21
+date_edited: 2023-04-30
 stage: active
 description:
-  This site is now totally rebuilt with Eleventy.  This post documents the process of getting here over the last few days.  Much of this post is actually taken from the site's readme.
+  This site is now totally rebuilt with Eleventy.  This post documents the process of getting here over the last few days.  Much of this post is actually taken from the site's documentation.
 tags: 
   - featured
 ---
@@ -19,6 +20,8 @@ But now the setup is all but done, it's mine, and I'm happy with how it's turnin
 ![rebuilt site screenshot](/assets/images/rebuilt-site/sc-1.png)
 
 [Here is the repo](https://github.com/mendelbrot/mendelbrot.github.io).  I was keeping notes in the readme as i went, and i think these notes are good enough that can quote the readme as it is for the rest of this post.
+
+**update:** i have moved the dev notes out of the readme.  they now reside [here](/docs)
 
 ## running the dev server
 

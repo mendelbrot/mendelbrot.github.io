@@ -4,7 +4,7 @@ module.exports = {
   author: 'Gregory Maxedon',
   nav: [
     { path: '/', label: 'Home' },
-    { path: '/posts', label: 'Posts' },
-    { path: '/about', label: 'About' },
+    { path: '/posts/', label: 'Posts' },
+    { path: '/about/', label: 'About' },
   ],
 }

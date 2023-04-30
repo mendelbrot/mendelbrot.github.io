@@ -1,6 +1,6 @@
 # My blog site
 
-visit: mendelbrot.github.io
+visit: <https://mendelbrot.github.io>
 
 this blog is mainly for featuring projects and posts about software development.  It is built with [eleventy](https://www.11ty.dev/) and [tailwind](https://tailwindcss.com/).
 
@@ -25,4 +25,4 @@ in the GitHub Pages settings it is set to deploy from the `gh-pages` branch at r
 
 ## documentation
 
-my dev notes are at mendelbrot.github.io/docs.
+my dev notes are at <https://mendelbrot.github.io/docs>.

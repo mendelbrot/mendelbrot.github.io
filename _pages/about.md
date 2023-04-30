@@ -1,6 +1,6 @@
 ---
 layout: base
-permalink: about.html
+permalink: /about/index.html
 ---
 
 <div class="section bg-blue-50">

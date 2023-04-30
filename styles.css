@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* sections are the muilding blocks of my site's layout */
+/* sections are the building blocks of my site's layout */
 .section {
   @apply p-2 rounded-lg drop-shadow-md
 }
@@ -13,8 +13,18 @@
 }
 
 /* this is to make sure text doesn't overflow 
-when viewing markdown prose on a small screen 
+when viewing markdown prose on a small screen. 
 specifically had problem with long links */
 .prose { 
   @apply break-words
+}
+
+/* resume styles */
+
+.resume h2 {
+  @apply text-2xl mb-4
+}
+
+.resume h3 {
+  @apply text-xl mb-2
 }

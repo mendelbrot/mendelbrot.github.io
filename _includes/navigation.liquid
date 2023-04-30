@@ -2,8 +2,7 @@
   <ul class="flex flex-col sm:flex-row">
     {% for item in site.nav %}
       <li class="flex-initial text-2xl ml-4 hover:opacity-50 
-      {% assign page_path = page.url | remove: ".html" %}
-      {% if item.path == page_path %}
+      {% if item.path == page.url %}
       underline underline-offset-4
       {% endif %}
       ">
