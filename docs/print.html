@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="running-the-dev-server.html"><strong aria-hidden="true">1.</strong> running the dev server</a></li><li class="chapter-item expanded "><a href="tailwind-set-up.html"><strong aria-hidden="true">2.</strong> tailwind set up</a></li><li class="chapter-item expanded "><a href="site-organization.html"><strong aria-hidden="true">3.</strong> site organization</a></li><li class="chapter-item expanded "><a href="styling.html"><strong aria-hidden="true">4.</strong> styling</a></li><li class="chapter-item expanded "><a href="styling-markdown.html"><strong aria-hidden="true">5.</strong> styling markdown</a></li><li class="chapter-item expanded "><a href="more-styling.html"><strong aria-hidden="true">6.</strong> more styling</a></li><li class="chapter-item expanded "><a href="horizontal-centering.html"><strong aria-hidden="true">7.</strong> horizontal centering</a></li><li class="chapter-item expanded "><a href="deployment-to-github-pages.html"><strong aria-hidden="true">8.</strong> deployment to github pages</a></li><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">9.</strong> documentation</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="running-the-dev-server.html"><strong aria-hidden="true">1.</strong> running the dev server</a></li><li class="chapter-item expanded "><a href="tailwind-set-up.html"><strong aria-hidden="true">2.</strong> tailwind set up</a></li><li class="chapter-item expanded "><a href="site-organization.html"><strong aria-hidden="true">3.</strong> site organization</a></li><li class="chapter-item expanded "><a href="styling.html"><strong aria-hidden="true">4.</strong> styling</a></li><li class="chapter-item expanded "><a href="styling-markdown.html"><strong aria-hidden="true">5.</strong> styling markdown</a></li><li class="chapter-item expanded "><a href="other-blog-sites-to-take-inspiration-from.html"><strong aria-hidden="true">6.</strong> other blog sites to take inspiration from</a></li><li class="chapter-item expanded "><a href="more-styling.html"><strong aria-hidden="true">7.</strong> more styling</a></li><li class="chapter-item expanded "><a href="horizontal-centering.html"><strong aria-hidden="true">8.</strong> horizontal centering</a></li><li class="chapter-item expanded "><a href="deployment-to-github-pages.html"><strong aria-hidden="true">9.</strong> deployment to github pages</a></li><li class="chapter-item expanded "><a href="documentation.html"><strong aria-hidden="true">10.</strong> documentation</a></li><li class="chapter-item expanded "><a href="resume.html"><strong aria-hidden="true">11.</strong> resume</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -299,26 +299,11 @@ lorum ipsum
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling-markdown"><a class="header" href="#styling-markdown">styling markdown</a></h1>
 <p>Oh I've got bigger problems then the social icons not rendering.  I just discovered that I might also have to style all of the markdown!  apparently the <a href="https://www.npmjs.com/package/markdown-it">markdown-it</a> library doesn't do styling, just plain html.  I found <a href="https://dev.to/matthewtole/eleventy-markdown-and-tailwind-css-14f8">this article</a> that talks about two styling solutions with tailwind.</p>
 <p><strong>update:</strong> the techniques in the article above weren't needed. the <a href="https://tailwindcss.com/docs/typography-plugin">tailwind typography plugin</a> beautifully styles anything in a &quot;prose&quot; class and also provides several ways to override the styles.</p>
-<h2 id="other-blog-sites-to-take-inspiration-from"><a class="header" href="#other-blog-sites-to-take-inspiration-from">other blog sites to take inspiration from</a></h2>
-<p>i think <a href="https://blog.kittycooper.com/">this</a> is a nice looking blog.</p>
-<h2 id="more-styling"><a class="header" href="#more-styling">more styling</a></h2>
-<p>I redid the styling.  encountered <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/">margin collapse</a>.  decided, as ive done before, to use a fixed height div for vertical spacing.</p>
-<pre><code class="language-html">&lt;div class=&quot;break&quot;&gt;&lt;/div&gt;
-</code></pre>
-<p>and i define custom classes after the tailwind style imports in my 'styles.css`</p>
-<pre><code class="language-css">@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.section {
-  @apply p-2 rounded-lg drop-shadow-md
-}
-
-.break {
-  @apply  h-2 sm:h-4
-}
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="more-styling-1"><a class="header" href="#more-styling-1">more styling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="other-blog-sites-to-take-inspiration-from"><a class="header" href="#other-blog-sites-to-take-inspiration-from">other blog sites to take inspiration from</a></h1>
+<ul>
+<li><a href="https://blog.kittycooper.com/">https://blog.kittycooper.com/</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="more-styling"><a class="header" href="#more-styling">more styling</a></h1>
 <p>I redid the styling.  encountered <a href="https://www.joshwcomeau.com/css/rules-of-margin-collapse/">margin collapse</a>.  decided, as ive done before, to use a fixed height div for vertical spacing.</p>
 <pre><code class="language-html">&lt;div class=&quot;break&quot;&gt;&lt;/div&gt;
 </code></pre>
@@ -401,6 +386,10 @@ done
 <p>with a plugin, it is also possible to use mermaid markup in code blocks in the markdown itself.  I considered this but decided that for my purposes it's more versatile to keep the markdown markup and the mermaid markup decoupled.</p>
 <p>here's an example diagram!</p>
 <p><img src="./images/doc-mindmap.png" alt="documentation mindmap" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resume"><a class="header" href="#resume">resume</a></h1>
+<p>im putting a resume on my website.  making it with html liquid template and filling in the resume data with data from a yaml file.</p>
+<p><a href="https://www.greatsampleresume.com/wp-content/themes/resumebaking/img/rtemplates/creative/Original-Peach.jpg">here's a resume i like</a></p>
+<p>and i found <a href="https://www.streamlinehq.com/icons/streamline-mini-line">streamlinehq</a> for providing icons</p>
 
                     </main>
 
