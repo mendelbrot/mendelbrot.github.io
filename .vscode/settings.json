@@ -1,4 +1,10 @@
 {
   "editor.tabSize": 2,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "[yaml]": {
+    "editor.wordWrap": "on"
+  },
+  "[xml]": {
+    "editor.wordWrap": "on"
+  },
 }

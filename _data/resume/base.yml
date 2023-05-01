@@ -1,0 +1,63 @@
+contact:
+  name: Greg Maxedon
+  title: Web Developer
+  location: Vancouver, British Columbia, Canada
+  # phone: 111-111-1111
+  # email: name@mail.com
+  website: https://mendelbrot.github.io
+  linkedin: https://linkedin.com/in/gregmaxedon/
+  github: https://github.com/mendelbrot
+
+summary: |
+  Highly skilled web developer with 3 years of experience in creating dynamic and responsive web applications using React, NodeJS, and Python. Adept at leveraging technology to develop innovative solutions that improve user experience and drive business success. Keen interest in Rust programming language and seeking opportunities to expand knowledge and apply it to future projects.
+
+skills:
+  - JavaScript
+  - TypeScript
+  - Python
+  - Elixir
+  - Rust
+  - Tailwind CSS
+  - React
+  - NodeJS
+  - REST APIs
+  - GraphQL
+  - Database design
+  - PostgreSQL
+  - MongoDB
+  - Git
+  - Linux
+  - Bash
+  - AWS
+
+education:
+  - school: British Columbia Institute of Technology
+    program: Software Systems Developer Certificate
+    dates: Sep 2018 - Jun 2019
+    grade: 96%
+
+  - school: Simon Fraser University
+    program: Bachelor of Science in Physics
+    dates: Sep 2008 - Jun 2015
+    grade: 3.70/4.33
+
+experience:
+  - company: MistyWest
+    role: IT Automation Developer (Part Time)
+    dates: May 2021 - Present (2 years)
+    location: Vancouver, British Columbia, Canada
+    achievements:
+      - Built a full-stack web application used by around ten people
+      - Created automation scripts with Python
+      - Helped to set up and maintain the network and servers
+      - Salesforce Admin and Developer
+      - Admin for Microsoft Active Directory, Google Workspace, and other SaaS
+      - Provided IT support with hardware and software troubleshooting
+  - company: Plasmatic Technologies
+    role: Frontend Developer
+    dates: Jun 2019 - Mar 2020 (10 months)
+    location: Vancouver, British Columbia, Canada
+    achievements:
+      - Built a React dashboard web application that was used by business customers
+      - Worked on NodeJS lambda functions and graphQL resolvers supporting the frontend
+      - Worked with AWS services including lambda, cognito, dynamoDB, and s3

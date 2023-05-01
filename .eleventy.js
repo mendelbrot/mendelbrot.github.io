@@ -1,7 +1,11 @@
 const markdownIt = require('markdown-it')
 const { DateTime } = require("luxon")
+const yaml = require("js-yaml")
 
 module.exports = function(config) {
+
+  // support yaml in the _data folder
+  config.addDataExtension("yml, yaml", contents => yaml.load(contents))
   
   config.addPassthroughCopy('assets')
 
