@@ -4,4 +4,7 @@
   "[yaml]": {
     "editor.wordWrap": "on"
   },
+  "[xml]": {
+    "editor.wordWrap": "on"
+  },
 }

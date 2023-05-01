@@ -1,18 +1,50 @@
 <div class="resume w-[8.5in] h-[11.0in] bg-white p-4 grid grid-cols-5 auto-rows-fr">
   
   <div class="col-span-2 row-span-2 border-r-2 border-slate-300 pr-4">
-    <h1 class="text-4xl mb-4">{{data.contact.name}}</h1>
-    <h2>{{data.contact.title}}</h2>
-    <a class="flex content-center" href="{{data.contact.website}}">
-      <img alt="website" class="object-contain h-5 w-5" src="/assets/icons/globe-web-slate-600.svg">
-      <span class="ml-2">{{data.contact.website}}</span>
-    </a>
+    <div>
+      <h1 class="text-4xl mb-4">{{data.contact.name}}</h1>
+      <h2>
+        {{data.contact.title}}<br>
+        <span class="text-base text-slate-600">{{data.contact.location}}</span>
+      </h2>
+      <p></p>
+    </div>
+    <div>
+      {% if data.contact.phone %}
+        <div class="flex items-center">
+          <img alt="phone" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/phone-mobile.svg">
+          <span class="ml-2">{{data.contact.phone}}</span>
+        </div>
+      {% endif %}
+      {% if data.contact.email %}
+        <div class="flex items-center">
+          <img alt="email" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/mail-at.svg">
+          <span class="ml-2">{{data.contact.email}}</span>
+        </div>
+      {% endif %}
+      <a class="flex items-center" href="{{data.contact.website}}">
+        <img alt="website" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/globe-web.svg">
+        <span class="ml-2">{{data.contact.website | remove: "https://"}}</span>
+      </a>
+      <a class="flex items-center" href="{{data.contact.github}}">
+        <img alt="github" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/github.svg">
+        <span class="ml-2">{{data.contact.github | remove: "https://"}}</span>
+      </a>
+      <a class="flex items-center" href="{{data.contact.linkedin}}">
+        <img alt="linkedin" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/linkedin.svg">
+        <span class="ml-2">{{data.contact.linkedin | remove: "https://"}}</span>
+      </a>
+    </div>
   </div>
 
   <div class="col-span-3 row-span-2 pl-4">
     <h2>Summary</h2>
     <p>{{data.summary}}</p>
-    <span class="material-symbols-outlined">search</span>
   </div>
 
   <div class="col-span-2 row-span-3 border-t-2 border-r-2 border-slate-300 pr-4">
@@ -27,17 +59,16 @@
   <div class="col-span-3 row-span-6 border-t-2 border-slate-300 pl-4">
     <h2>Experience</h2>
     {% for item in data.experience %} 
-      <div class="mb-8">
+      <div class="mb-4">
         <div class="mb-4">
-          <h3>{{item.companu}}</h3>
-          <p>{{item.role}}</p>
+          <h3>{{item.role}}<br>{{item.company}}</h3>
           <p>{{item.dates}}</p>
-          <p>{{item.location}}</p>
+          <p class="text-slate-600">{{item.location}}</p>
         </div>
         <ul class="px-4">
         {% for point in item.achievements %} 
           <li class="mb-2 flex">
-            <div class="mr-2">&#x2022</div>
+            <div class="mr-2 text-slate-600">&#x2022</div>
             <div>{{point}}</div>
           </li>
         {% endfor %}
