@@ -3,6 +3,12 @@ layout: base
 permalink: /about/index.html
 ---
 
+<div class="section bg-green-100">
+  <h1 class="text-3xl">About this site</h1>
+</div>
+
+<div class="break"></div>
+
 <div class="section bg-blue-50">
 {% markdown %}
 {{site.about}}
@@ -12,9 +18,16 @@ permalink: /about/index.html
 <div class="break"></div>
 
 <div class="section bg-green-100">
-  <a class="flex items-center hover:opacity-50" href="/resume/">
-    <span class="text-3xl text-blue-600 mr-2">Resume</span>
-    <img alt="resume link" class="object-contain h-5 w-5" 
-      src="/assets/icons/link.svg">
-  </a>
+  <h1 class="text-3xl">About me</h1>
+</div>
+
+<div class="break"></div>
+
+<div class="section bg-blue-50">
+{% markdown %}
+{{resume.base.summary}}
+
+- [HTML resume](/resume/)
+- [PDF resume](/assets/downloads/resume.pdf)
+{% endmarkdown %}
 </div>

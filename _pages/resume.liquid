@@ -4,8 +4,4 @@ permalink: /resume/index.html
 
 {% include "head.liquid" %}
 
-<div class="bg-blue-700 bg-opacity-70 p-8">
-  <div class="w-[8.5in] mx-auto">
-    {% include "resume/resume.liquid", data: resume.base  %}
-  </div>
-</div>
+{% include "resume/resume.liquid", data: resume.base  %}
