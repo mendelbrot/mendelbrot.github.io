@@ -9,7 +9,7 @@ contact:
   github: https://github.com/mendelbrot
 
 summary: |
-  Highly skilled web developer with 3 years of experience in creating dynamic and responsive web applications using React, NodeJS, and Python. Adept at leveraging technology to develop innovative solutions that improve user experience and drive business success. Keen interest in Rust programming language and seeking opportunities to expand knowledge and apply it to future projects.
+  As a web developer with three years of experience, I specialize in building web applications using React, NodeJS, and Python. I'm passionate about leveraging technology to create innovative solutions that enhance user experience. I'm also interested in learning more about the Rust programming language and how it can be used in future projects.
 
 skills:
   - JavaScript
@@ -29,6 +29,7 @@ skills:
   - Linux
   - Bash
   - AWS
+  - Docker
 
 education:
   - school: British Columbia Institute of Technology
@@ -53,6 +54,7 @@ experience:
       - Salesforce Admin and Developer
       - Admin for Microsoft Active Directory, Google Workspace, and other SaaS
       - Provided IT support with hardware and software troubleshooting
+  
   - company: Plasmatic Technologies
     role: Frontend Developer
     dates: Jun 2019 - Mar 2020 (10 months)
