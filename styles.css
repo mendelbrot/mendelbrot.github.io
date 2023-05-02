@@ -20,6 +20,15 @@ specifically had problem with long links */
 }
 
 /* resume styles */
+/* m-[0.75in] w-[8.5in] h-[11.0in] bg-white grid grid-cols-5 auto-rows-fr */
+
+/* @page {
+  size: letter portrait;
+} */
+
+.resume {
+  @apply m-[0.25in] w-[8.0in] h-[10.5in] bg-white grid grid-cols-5 auto-rows-fr
+}
 
 .resume h2 {
   @apply text-2xl mb-4
@@ -28,3 +37,19 @@ specifically had problem with long links */
 .resume h3 {
   @apply text-xl mb-2
 }
+
+@page { 
+  margin: 0; 
+  size: letter;
+}
+
+/* .resume {
+  @apply m-[0in] p-[0in] w-[8.5in] h-[11.0in] bg-white grid grid-cols-5 auto-rows-fr
+}
+
+@media print {
+  html, body {
+    width: 8.5in;
+    height: 11in;
+  }
+} */
