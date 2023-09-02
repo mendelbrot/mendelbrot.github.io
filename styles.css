@@ -28,3 +28,28 @@ specifically had problem with long links */
 .resume h3 {
   @apply text-xl mb-2
 }
+
+.background {
+  @apply bg-slate-400
+}
+
+.section-head-foot {
+  @apply bg-orange-100
+}
+
+.section-title {
+  @apply bg-green-100
+
+}.section-content {
+  @apply bg-fuchsia-50
+}
+
+.section-border {
+  @apply border-0 border-slate-300
+}
+
+
+
+/* body {
+  @apply font-mono
+} */
