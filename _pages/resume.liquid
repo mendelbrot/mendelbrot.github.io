@@ -1,7 +1,16 @@
 ---
+layout: base-empty
 permalink: /resume/index.html
+download_link: /assets/downloads/resume.pdf
 ---
 
-{% include "head.liquid" %}
+<div class="fixed bottom-6 right-6 md:bottom-12 md:right-12">
+  {% include "download.liquid", href: download_link %}
+</div>
 
-{% include "resume/resume.liquid", data: resume.base  %}
+
+<div class=" mx-auto md:w-[8.5in]">
+  {% include "resume/resume.liquid", data: resume.base %}
+</div>
+  
+
