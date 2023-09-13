@@ -2,7 +2,7 @@ url: https://mendelbrot.github.io
 description: My hobbies and projects site
 author: Gregory Maxedon
 about: |
-  This blog is mainly for featuring portfolio projects and posts about software development.  I also use this blog for anything else I feel like posting.  
+  This blog is mainly for featuring portfolio projects, posts about software development and related interests.
 nav:
   - path: / 
     label: Home
