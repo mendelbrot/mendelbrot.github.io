@@ -26,7 +26,17 @@ permalink: /about/index.html
 <div class="section section-border section-content">
 {% markdown %}
 {{resume.base.summary}}
-
-- [Resume](/resume/)
 {% endmarkdown %}
+
+  <div class="my-4">
+    <a class="cursor-pointer hover:opacity-50" href="/resume/">
+      <div class="inline" ><span class="underline text-xl font-medium">See my resume</span></dev>
+      <img 
+        class="h-6 inline"
+        src="/assets/icons/resume.svg"
+        alt="Resume"
+      ></img>
+    </a>
+  </div>
+  
 </div>
