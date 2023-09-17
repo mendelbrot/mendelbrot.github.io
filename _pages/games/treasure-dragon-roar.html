@@ -6,8 +6,6 @@ permalink: /games/treasure-dragon-roar.html
 <script type="module">
   import init from "/assets/wasm/treasure-dragon-roar/treasure-dragon-roar.js";
 
-  const body = document.querySelector("body")
-
   window.start = () => {
     init().catch((error) => {
       if (!error.message.startsWith("Using exceptions for control flow, don't mind me. This isn't actually an error!")) {
@@ -17,6 +15,7 @@ permalink: /games/treasure-dragon-roar.html
       const canvas = document.querySelector("canvas");
       const div = document.getElementsByClassName("mx-auto")[0];
       const startButton = document.getElementById("start");
+      
       startButton.remove();
       div.appendChild(canvas);
       canvas.classList.add("mx-auto")
