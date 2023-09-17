@@ -9,7 +9,7 @@ tags:
   - featured
 ---
 
-* [Try it here](/games/treasure-dragon-roar/)
+* [Try it here](/games/treasure-dragon-roar.html)
 * [See the code here](https://github.com/mendelbrot/treasure-dragon-roar)
 
 ![api client screenshot](/assets/images/demo-screenshots/treasure-dragon-roar.png)
