@@ -12,6 +12,9 @@ module.exports = function(config) {
   // copy the site documentation / notes pages
   config.addPassthroughCopy({ "docs/book": "docs" })
 
+  // copy assets for wasm
+  config.addPassthroughCopy({ "assets/wasm/assets": "games/assets" })
+
   const md = markdownIt({ linkify: true, html: true })
   config.setLibrary('md', md)
 
