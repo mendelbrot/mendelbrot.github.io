@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="My hobbies and projects site">
+  <title>Gregory Maxedon</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body class="
+  background
+  overflow-y-auto
+  min-h-screen flex flex-col 
+  p-2 sm:p-4
+  ">
+
+  <header class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      <div class="section section-border section-head-foot flex justify-between">
+  <a href="/">
+  <h1 class="text-3xl mb-2">Gregory Maxedon</h1>
+  <p class="text-xl opacity-80">My hobbies and projects site</p>
+</a>
+  <nav role="navigation">
+  <ul class="flex flex-col sm:flex-row">
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      ">
+        <a href="/">Home</a>
+      </li>
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      ">
+        <a href="/posts/">Posts</a>
+      </li>
+    
+      <li class="flex-initial text-2xl ml-4 hover:opacity-50 
+      
+      ">
+        <a href="/about/">About</a>
+      </li>
+    
+  </ul>
+</nav>
+</div>
+
+<div class="break"></div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <div class="max-w-prose mx-auto">
+      
+<article>
+
+  <div class="section section-border section-title">
+
+    <h1 class="text-4xl mb-2">Planning a Chat App</h1>
+
+    <div>
+      <span>Posted: Oct 2, 2023</span>
+    </div>
+
+    
+
+    
+      <p class="text-xl opacity-80 mt-2">In the next few weeks I'm planning to work on a basic chat app as a portfolio project.</p>
+    
+
+  </div>
+
+  <div class="break"></div>
+
+  <div class="section section-border section-content prose"><p>I've been thinking about what I can work on as a project.  I want to build something that gives me something to show for it early on. In previous projects, like <a href="https://github.com/mendelbrot/dory">Dory</a>, I made the initial plan too complicated, then I got the project to a certain point and abandoned it due to it being too much effort.</p>
+<p>When that happens, I have nothing to show for my work.  So this time it will be very minimal.  The most basic chat application.  Not a Slack clone, no workspaces, channels, or threads.  The homepage is going to be one open chatroom and that is it.</p>
+<p>Instead of going big on my data model and complexity, what I can do is go big on the thoroughness of the implementation.  What do I mean by that?  Well, after I make the chatroom web version, then I can make a mobile app, and then I can set up push notifications.  So I can explore the entire realm of what is needed to develop a chat app, but with a very simple app.</p>
+<p>This will give me the opportunity to develop these capabilities that I can apply in future more involved projects.  And at every step of the way, I'll have an MVP to show.</p>
+<p>I'm also thinking about the backend.  So for the frontend I'm using <a href="https://nextjs.org/">Next.js</a>, and I've built up a great <a href="https://github.com/mendelbrot/next-starter">starter repo</a> with most of the things I'll need for any <span>Next.js</span> project.  But I can't use <span>Next.js</span> as the full backend too, because a websocket connection needs a persistent server, however <span>Next.js</span> uses a serverless architecture.  One solution is to set up a second server for websockets.</p>
+<p>Then, I need to choose which technology I want to create the websocket server with: JavaScript; Phoenix; Rust; Python; .NET; PHP?</p>
+<p>My preferred choice is Rust, because getting more experience with Rust is on my todo list.  For Rust, I narrowed my choices down to two frameworks: <a href="https://rocket.rs/">Rocket</a> and <a href="https://actix.rs/">Actix</a>.  Both of these projects have a large following and are actively being developed.</p>
+<p>Of these, Rocket is my first choice because the developer experience is a significant component of their core philosophy, it is relatively easy to get started with, and their website documentation is very through.  Another point for rocket: <a href="https://github.com/rust-lang/www.rust-lang.org/tree/master">the Rust website is built with it</a>.  Actix also seems good, however I think it would be somewhat of a higher barrier for me to develop with it.</p>
+<p>There is a major problem though: Rocket does not yet support websockets.  They are very transparent about this and stated it on their <a href="https://rocket.rs/v0.5-rc/guide/faq/#web-sockets">FAQ</a>.  But in the meantime they offer an alternative, using <a href="https://api.rocket.rs/v0.5-rc/rocket/response/stream/struct.EventStream.html">server sent events</a> to accomplish almost the same thing.</p>
+<p>Another option I haven't brought up yet is, I'm using a Postgres database, and <a href="https://supabase.com/docs/guides/realtime">Supabase has a realtime api</a> that would adequately solve this problem if I host my Postgres on Supabase.  The Supabase realtime api is <a href="https://github.com/supabase/realtime">built with Elixir</a>.</p>
+<p>Elixir is scalable, distributed, and has first class support for websockets with <a href="https://www.phoenixframework.org/">the Phoenix framework</a>.  I also have some experience with Elixir, as I made Dory with Phoenix LiveView.  Overall I had a good time working with Phoenix, however there were some things about the Elixir language that didn't align with my ideals.  Mainly this was the dynamic type system, as as I'm trying to go in the other direction of building more experience with statically typed languages.</p>
+<p>Finally, an option I'm considering as well is a JavaScript server using <a href="https://socket.io/">Socket.IO</a> for websockets communication.  This also could be an opportunity for me to try out <a href="https://deno.com/">Deno</a>.</p>
+<p>To tie this all together, I need a backend that supports chat messaging.  Out of the infinite possibilities, some of the options I've considered are:</p>
+<ul>
+<li><strong>The Rust Rocket framework:</strong><br>Has a great developer experience, doesn't yet support websockets, but has a workaround.</li>
+<li><strong>The Rust Actix framework:</strong><br>A bit harder for a newbie to get into, but has full websocket support.</li>
+<li><strong>Supabase Realtime:</strong><br>The fastest way to get started, no backend needed, but a little bit of vendor lock-in.</li>
+<li><strong>Phoenix:</strong><br>A natural choice for a websocket server, but not my preferred language.</li>
+<li><strong><span>Socket.IO</span> on a JavaScript server:</strong><br>Probably the quickest way to get started with my own server, and can be an opportunity to try out Deno.</li>
+</ul>
+<p>And... I haven't made my decision yet.</p>
+<p>It's not like this would be a final decision, as I could always change it if I find it's not working out the way I expected.</p>
+<p>The main consideration though, I think, is time.  Circling back to the beginning, I want something I can get to an MVP quickly.  I think that the options most consistent with this are Supabase Realtime and <span>Socket.IO</span>.</p>
+</div>
+
+</article>
+    </div>
+  </main>
+
+  <footer class="flex justify-center">
+    <div class="max-w-prose flex-1">
+      <div class="break"></div>
+
+<div class="section section-border section-head-foot flex justify-between bg-red-100">
+  <div class="invisible">
+    <span>Gregory Maxedon</span>
+  </div>
+  <ul class="flex">
+  <li class="pl-2 hover:opacity-50">
+    <a href="https://github.com/mendelbrot">
+      <img 
+        height="32" 
+        width="32" 
+        src="https://cdn.simpleicons.org/github/black"
+        alt="Github"
+      ></img>
+    </a>
+  </li>
+  <li class="pl-2 hover:opacity-50">
+    <a href="https://www.linkedin.com/in/gregmaxedon/">
+      <img 
+        height="32" 
+        width="32" 
+        src="https://cdn.simpleicons.org/linkedin/black"
+        alt="LinkedIn"
+      >
+      </img>
+    </a>
+  </li>
+  <li class="pl-2 hover:opacity-50">
+    <a href="/resume/">
+      <img 
+      class="h-[32px]"
+        src="/assets/icons/resume.svg"
+        alt="Resume"
+      ></img>
+    </a>
+  </li>
+</ul>
+</div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
