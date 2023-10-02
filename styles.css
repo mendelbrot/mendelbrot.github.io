@@ -19,15 +19,17 @@ specifically had problem with long links */
   @apply break-words
 }
 
-/* resume styles */
+/* extending grid rows */
 
-.resume h2 {
-  @apply text-2xl mb-4
+.grid-rows-7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
 }
 
-.resume h3 {
-  @apply text-xl mb-2
+.grid-rows-8 {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
 }
+
+/* page layout styles */
 
 .background {
   @apply bg-slate-400

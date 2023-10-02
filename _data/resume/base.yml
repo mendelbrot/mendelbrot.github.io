@@ -1,15 +1,11 @@
 contact:
   name: Greg Maxedon
-  title: Web Developer
-  location: Vancouver, British Columbia, Canada
-  # phone: 111-111-1111
-  # email: name@mail.com
+  location: Vancouver, BC
+  phone: 604-700-6241
+  email: gregory.maxedon@gmail.com
   website: https://mendelbrot.github.io
   linkedin: https://linkedin.com/in/gregmaxedon/
   github: https://github.com/mendelbrot
-
-summary: |
-  As a web developer with three years of experience, I specialize in building web applications using React, NodeJS, and Python. I'm passionate about leveraging technology to create innovative solutions that enhance user experience. I'm also interested in learning more about the Rust programming language and how it can be used in future projects.
 
 skills:
   - JavaScript
@@ -34,32 +30,53 @@ skills:
 education:
   - school: British Columbia Institute of Technology
     program: Software Systems Developer Certificate
-    dates: Sep 2018 - Jun 2019
-    grade: 96%
+    dates: 2018 - 2019
+    location: Vancouver, BC
+    grade: A+
 
   - school: Simon Fraser University
     program: Bachelor of Science in Physics
-    dates: Sep 2008 - Jun 2015
-    grade: 3.70/4.33
+    dates: 2008 - 2015
+    location: Burnaby, BC
+    grade: A-
 
 experience:
   - company: MistyWest
     role: IT Automation Developer (Part Time)
-    dates: May 2021 - Present (2 years)
-    location: Vancouver, British Columbia, Canada
+    dates: May 2021 - Present
+    location: Vancouver, BC
     achievements:
-      - Built a full-stack web application used by around ten people
-      - Created automation scripts with Python
-      - Helped to set up and maintain the network and servers
-      - Salesforce Admin and Developer
-      - Admin for Microsoft Active Directory, Google Workspace, and other SaaS
-      - Provided IT support with hardware and software troubleshooting
+      - Offered IT support, addressing hardware and software issues.
+      - Developed a full-stack web application and created automation scripts using Python and JavaScript.
+      - Conducted computer and server repairs and performed system upgrades.
+      - Acted as an administrator for Salesforce, Microsoft Active Directory, Google Workspace, and other SaaS platforms.
   
   - company: Plasmatic Technologies
     role: Frontend Developer
-    dates: Jun 2019 - Mar 2020 (10 months)
-    location: Vancouver, British Columbia, Canada
+    dates: Jun 2019 - Mar 2020
+    location: Vancouver, BC
     achievements:
-      - Built a React dashboard web application that was used by business customers
-      - Worked on NodeJS lambda functions and graphQL resolvers supporting the frontend
-      - Worked with AWS services including lambda, cognito, dynamoDB, and s3
+      - Developed a React dashboard web application for use by business customers.
+      - Collaborated on NodeJS lambda functions and GraphQL APIs.
+      - Worked with AWS services, including Lambda, Cognito, DynamoDB, and S3.
+
+  - company: Ballard Power Systems
+    role: Production Technician
+    dates: Mar 2016 - Dec 2016
+    location: Burnaby, BC
+    achievements:
+      - Produced components with care and attention that met stringent quality standards.
+      - Followed workmanship guidelines and written instructions.
+      - Operated manufacturing equipment while adhering to safety protocols.
+  
+  - company: ALS Environmental
+    role: Laboratory Assistant
+    dates: Jul 2009 - Dec 2012
+    location: Burnaby, BC
+    achievements:
+      - > 
+        Conducted water sample tests for parameters including: turbidity, colour, pH, TSS, TDS, VOC
+      - Entered test results data into computer systems.
+      - Operated and monitored automated testing equipment.
+      - Ensured the cleanliness and proper upkeep of laboratory equipment, including washing lab apparatus.
+      - Performed sample logistics and sample preservation with HCl and H<sub>2</sub>SO<sub>4</sub>.
