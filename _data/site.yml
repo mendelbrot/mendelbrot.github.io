@@ -1,8 +1,16 @@
 url: https://mendelbrot.github.io
 description: My hobbies and projects site
-author: Gregory Maxedon
-about: |
-  This blog is mainly for featuring portfolio projects, posts about software development and related interests.
+author: Greg Maxedon
+about: >-
+  This blog is mainly for featuring portfolio projects, posts about software 
+  development and related interests.
+aboutMe: >-
+  As a web developer with three years of experience, I specialize in building 
+  web applications using React, NodeJS, and Python. I'm passionate about 
+  leveraging technology to create innovative solutions that enhance user 
+  experience. I'm also interested in learning more about the Rust programming 
+  language and how it can be used in future projects.
+
 nav:
   - path: / 
     label: Home
