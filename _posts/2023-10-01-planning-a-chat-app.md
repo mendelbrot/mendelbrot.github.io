@@ -34,7 +34,7 @@ To tie this all together, I need a backend that supports chat messaging.  Out of
 * __The Rust Actix framework:__ A bit harder for a newbie to get into, but has full websocket support.
 * __Supabase Realtime:__ The fastest way to get started with no backend, but a little bit of vendor lock-in.
 * __Phoenix:__ a natural choice for a websocket server, but not my preferred language
-* __Socket.IO on a JavaScript server:__ probably the quickest way to get started with my own server, and can be an opportunity to try out Deno.
+* __<span>Socket.IO</span> on a JavaScript server:__ probably the quickest way to get started with my own server, and can be an opportunity to try out Deno.
 
 And... I haven't made my decision yet.  
 
