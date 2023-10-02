@@ -6,7 +6,6 @@ stage: active
 description:
   Creating software requires a lot debugging of peripheral tools including the IDE and build tools.  This video recounts one such adventure.
 tags: 
-  - featured
 ---
 
 <iframe

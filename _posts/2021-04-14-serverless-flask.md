@@ -6,9 +6,6 @@ stage: active
 description:
   I can never remember the terminal command to set up a python virtual environment, so every time a have to do it, I remember it's on my blog and look it up here.
 tags: 
-  - featured
-# edited: 2021-03-18 10:00 -0700
-# categories: software-programming
 ---
 
 ![api client screenshot](/assets/images/demo-screenshots/2021-04-14-serverless-flask-api-client.png)

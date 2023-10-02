@@ -4,7 +4,7 @@ title: Treasure Dragon Roar!
 date_posted: 2023-09-16
 stage: active
 description:
-  My first video game created with the Bevy Engine is deployed to my site.
+  My first video game created with the Bevy Engine is deployed to my site.  (Note that it does not support mobile browsers.)
 tags: 
   - featured
 ---
