@@ -1,0 +1,120 @@
+<div class="md:grid grid-cols-5 grid-rows-8 md:w-[8.5in] md:h-[11.0in] bg-white p-4">
+  
+  <div class="col-span-2 row-span-2">
+    <div>
+      <h1 class="font-mono text-blue-800 text-4xl">{{data.contact.name}}</h1>
+      
+      <div class="flex items-center mb-6">
+        <img alt="dates" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/location-pin.svg">
+        <span class="ml-2 text-slate-600">{{data.contact.location}}</span>
+      </div>
+    </div>
+    <div>
+      {% if data.contact.phone %}
+        <div class="flex items-center">
+          <img alt="phone" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/phone-mobile.svg">
+          <span class="ml-2">{{data.contact.phone}}</span>
+        </div>
+      {% endif %}
+      {% if data.contact.email %}
+        <div class="flex items-center mb-6">
+          <img alt="email" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/mail-at.svg">
+          <span class="ml-2">{{data.contact.email}}</span>
+        </div>
+      {% endif %}
+      {% if data.contact.website %}
+      <a class="flex items-center" href="{{data.contact.website}}">
+        <img alt="website" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/globe-web.svg">
+        <span class="ml-2 text-slate-600">{{data.contact.website | remove: "https://"}}</span>
+      </a>
+      {% if data.contact.github %}
+      {% endif %}
+      <a class="flex items-center" href="{{data.contact.github}}">
+        <img alt="github" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/github.svg">
+        <span class="ml-2 text-slate-600">{{data.contact.github | remove: "https://"}}</span>
+      </a>
+      {% endif %}
+      {% if data.contact.linkedin %}
+      <a class="flex items-center" href="{{data.contact.linkedin}}">
+        <img alt="linkedin" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/linkedin.svg">
+        <span class="ml-2 text-slate-600">{{data.contact.linkedin | remove: "https://"}}</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-start-1 row-start-3 col-span-2 row-span-3 mt-4 pr-2">
+    <h2 class="text-2xl mb-4">Skills</h2>
+    <ul class="flex flex-wrap">
+      {% for skill in data.skills %} 
+      <li class="my-1 mr-2 py-1 px-2 border-2 border-slate-300 rounded-xl">{{skill}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="col-start-1 row-start-6 col-span-2 row-span-3 mt-4 pr-2">
+    <h2 class="text-2xl mb-4">Education</h2>
+    {% for item in data.education %} 
+    <div class="mb-4">
+      <h3 class="text-xl mb-2">{{item.school}}</h3>
+      <p>{{item.program}}</p>
+      <div class="flex">
+        <div class="flex items-center pr-4">
+          <img alt="dates" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/calendar.svg">
+          <span class="ml-2 text-slate-600">{{item.dates}}</span>
+        </div>
+        <div class="flex items-center">
+          <img alt="dates" class="object-contain h-5 w-5" 
+            src="/assets/icons/resume/slate-600/location-pin.svg">
+          <span class="ml-2 text-slate-600">{{item.location}}</span>
+        </div>
+      </div>
+      <a class="flex items-center" href="{{data.contact.linkedin}}">
+        <img alt="linkedin" class="object-contain h-5 w-5" 
+          src="/assets/icons/resume/slate-600/graduation-cap.svg">
+        <span class="ml-2 text-slate-600">{{item.grade}}</span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="col-start-3 row-start-1 col-span-3 row-span-full mt-4 md:mt-0 md:border-l-2 border-slate-300 md:pl-4">
+    <h2 class="text-2xl mb-4">Experience</h2>
+    {% for item in data.experience %} 
+      <div class="mb-4">
+        <div class="mb-2">
+          <h3 class="text-xl">{{item.role}}</h3>
+          <h3 class="text-xl mb-2 font-bold text-slate-600">{{item.company}}</h3>
+          <div class="flex">
+            <div class="flex items-center pr-4">
+              <img alt="dates" class="object-contain h-5 w-5" 
+                src="/assets/icons/resume/slate-600/calendar.svg">
+              <span class="ml-2 text-slate-600">{{item.dates}}</span>
+            </div>
+            <div class="flex items-center">
+              <img alt="dates" class="object-contain h-5 w-5" 
+                src="/assets/icons/resume/slate-600/location-pin.svg">
+              <span class="ml-2 text-slate-600">{{item.location}}</span>
+            </div>
+          </div>
+        </div>
+        <ul class="px-4">
+        {% for point in item.achievements %} 
+          <li class="flex">
+            <div class="mr-2 text-slate-600">&#x2022</div>
+            <div class="text-sm">{{point}}</div>
+          </li>
+        {% endfor %}
+      </ul>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
