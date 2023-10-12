@@ -2,7 +2,7 @@
 layout: post
 title: Exploring Tri-D Chess Rules
 date_posted: 2021-03-27
-stage: active
+stage: archived
 # edited: 2021-03-18 10:00 -0700
 # categories: tri-d-chess
 # tags: star-trek 3D-chess Tri-D-chess multi-level-chess

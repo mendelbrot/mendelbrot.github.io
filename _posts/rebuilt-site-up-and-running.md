@@ -7,8 +7,6 @@ date_edited: 2023-04-30
 stage: active
 description:
   This site is now totally rebuilt with Eleventy.  This post documents the process of getting here over the last few days.  Much of this post is actually taken from the site's documentation.
-tags: 
-  - featured
 ---
 
 I migrated my blog site from Jekyll to Eleventy.  The reason I switched is my blog was getting neglected and one of the barriers to working on it was yet again installing Ruby on my new OS and starting it up.  I also though it was time for me to try something new.  
