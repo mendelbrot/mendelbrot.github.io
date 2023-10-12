@@ -2,7 +2,7 @@
 layout: post
 title: Planning a Chat App
 date_posted: 2023-10-02
-stage: active
+stage: archived
 description:
   In the next few weeks I'm planning to work on a basic chat app as a portfolio project.
 tags: 

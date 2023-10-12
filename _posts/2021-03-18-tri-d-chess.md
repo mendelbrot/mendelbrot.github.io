@@ -3,7 +3,7 @@ layout: post
 title: Tri-D Chess
 date_posted: 2021-03-18
 date_edited: 2021-03-27
-stage: active
+stage: archived
 # categories: tri-d-chess
 # tags: star-trek 3D-chess Tri-D-chess multi-level-chess
 ---

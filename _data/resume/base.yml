@@ -1,8 +1,8 @@
 contact:
   name: Greg Maxedon
   location: Vancouver, BC
-  phone: 604-700-6241
-  email: gregory.maxedon@gmail.com
+  # phone: 604-111-1111
+  # email: someone@gmail.com
   website: https://mendelbrot.github.io
   linkedin: https://linkedin.com/in/gregmaxedon/
   github: https://github.com/mendelbrot
